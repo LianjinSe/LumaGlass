@@ -21,10 +21,10 @@
 也可以从 fork 的主题分支直接安装：
 
 ```bash
-git clone https://github.com/LianjinSe/TypechoGlass.git LumaGlass
+git clone https://github.com/LianjinSe/LumaGlass.git LumaGlass
 ```
 
-将克隆得到的 `LumaGlass` 文件夹放入 `usr/themes/`。fork 仅保留默认分支 [`lumaglass`](https://github.com/LianjinSe/TypechoGlass/tree/lumaglass)，克隆后即可使用 LumaGlass 主题。
+将克隆得到的 `LumaGlass` 文件夹放入 `usr/themes/`。fork 仅保留默认分支 [`lumaglass`](https://github.com/LianjinSe/LumaGlass/tree/lumaglass)，克隆后即可使用 LumaGlass 主题。
 
 首次使用时，没有单独设置的项目会读取 `theme:TypechoGlass` 中的原有设置，不修改该设置记录。保存后使用 LumaGlass 自己的主题配置；可分别维护两套主题。文章自定义字段保持 `cover`、`subtitle`、`featured`、`disableToc`、`linksJson`，无需迁移内容。
 
@@ -80,4 +80,4 @@ git clone https://github.com/LianjinSe/TypechoGlass.git LumaGlass
 - 分叉基线：`01d99a0e47f199f95273d44585adb5860b9b9ddf`。
 - 新主题版本：1.0.0。
 - 沿用上游 GPL-3.0 许可，完整许可保存在 `LICENSE`。
-- 此目录保留上游 Git 历史，开发分支为 `lumaglass`。`upstream` 指向原主题仓库，`origin` 指向 [LianjinSe/TypechoGlass](https://github.com/LianjinSe/TypechoGlass) fork。
+- 此目录保留上游 Git 历史，开发分支为 `lumaglass`。`upstream` 指向原主题仓库，`origin` 指向 [LianjinSe/LumaGlass](https://github.com/LianjinSe/LumaGlass) fork。

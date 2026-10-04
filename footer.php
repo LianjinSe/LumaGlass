@@ -9,7 +9,7 @@
           <?php if (trim((string) ag_option('beian', '')) !== ''): ?><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars(ag_option('beian')); ?></a><?php endif; ?>
           <?php if (trim((string) ag_option('publicSecurityNumber', '')) !== ''): ?><a class="security-link" href="<?php echo htmlspecialchars(ag_option('publicSecurityUrl', '')); ?>" target="_blank" rel="noopener noreferrer"><?php if (ag_option('publicSecurityIcon', '')): ?><img src="<?php echo htmlspecialchars(ag_option('publicSecurityIcon', '')); ?>" alt="" width="14" height="14" loading="lazy"><?php endif; ?><?php echo htmlspecialchars(ag_option('publicSecurityNumber', '')); ?></a><?php endif; ?>
         </div>
-        <span>Powered by <a href="https://typecho.org/" target="_blank" rel="noopener noreferrer">Typecho</a> · <a href="https://github.com/LianjinSe/TypechoGlass/tree/lumaglass" target="_blank" rel="noopener noreferrer" title="LumaGlass，基于 Sandro 的 TypechoGlass">LumaGlass</a></span>
+        <span>Powered by <a href="https://typecho.org/" target="_blank" rel="noopener noreferrer">Typecho</a> · <a href="https://github.com/LianjinSe/LumaGlass/tree/lumaglass" target="_blank" rel="noopener noreferrer" title="LumaGlass，基于 Sandro 的 TypechoGlass">LumaGlass</a></span>
       </div>
     </div>
   </footer>

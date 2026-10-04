@@ -5,7 +5,7 @@
  * @package LumaGlass
  * @author LianjinSe / TypechoGlass by Sandro
  * @version 1.0.0
- * @link https://github.com/LianjinSe/TypechoGlass/tree/lumaglass
+ * @link https://github.com/LianjinSe/LumaGlass/tree/lumaglass
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
