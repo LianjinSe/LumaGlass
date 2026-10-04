@@ -8,6 +8,7 @@ function themeConfig($form)
         text('heroEyebrow', 'A little space for thoughts', '首页眉标题', '显示在首页 Hero 小字上方。'),
         text('heroTitle', '记录，慢慢发光。', '首页标题', '首页 Hero 主标题。'),
         textarea('heroSubtitle', '把生活的片刻、学习的发现，以及脑海里的零碎，留在这里。', '首页副标题', '首页 Hero 副标题。'),
+        textarea('heroFootnote', '', '首页附注文案', '显示在首页阅读按钮下方，留空隐藏。'),
         text('heroPanelOneLabel', '最近状态', '首页信息卡 1 标题', '首页 Hero 右侧第一张卡片标题。'),
         text('heroPanelOneValue', '保持好奇', '首页信息卡 1 内容', '首页 Hero 右侧第一张卡片内容。'),
         text('weatherLocation', 'Shanghai', '天气地点', '首页天气卡使用的地点，建议填写城市英文名，如 Shanghai、Beijing、Tokyo。'),
@@ -29,11 +30,13 @@ function themeConfig($form)
         textarea('extraNavLinks', "[\n  {\"name\":\"归档\",\"url\":\"special:archive\"},\n  {\"name\":\"友链\",\"url\":\"special:friends\"}\n]", '额外导航 JSON', '除独立页面外追加的导航。字段：name、url、newtab。支持 special:archive / special:friends 自动匹配对应页面。'),
         textarea('friendsIntro', '把喜欢的站点收集起来，让有趣的人彼此相遇。', '友链页说明', '用于友情链接页顶部说明。'),
         textarea('sidebarIntro', '', '侧栏简介', '留空则使用站点描述。'),
-        textarea('footerText', '让每一个想法，都有停留的地方。', '页脚文案', '显示在页脚。'),
-        text('beian', '', 'ICP备案号', '页脚备案信息。'),
-        text('publicSecurityNumber', '', '公安备案号', '留空可隐藏。'),
-        text('publicSecurityUrl', '', '公安备案查询链接'),
-        text('publicSecurityIcon', '', '公安备案图标 URL'),
+        textarea('sidebarNote', '', '侧栏附注文案', '显示在侧栏底部，支持换行，留空隐藏。'),
+        textarea('footerText', '', '页脚文案', '显示在页脚，留空隐藏。'),
+        text('beian', '', 'ICP备案号', '填写本站的 ICP 备案号，留空隐藏。'),
+        text('beianUrl', 'https://beian.miit.gov.cn/', 'ICP备案查询链接', '支持 HTTP/HTTPS；清空后仅显示备案号文字。'),
+        text('publicSecurityNumber', '', '公安备案号', '填写本站的公安备案号，留空隐藏。'),
+        text('publicSecurityUrl', '', '公安备案查询链接', '填写本站备案查询页面的 HTTP/HTTPS 地址；留空后仅显示备案号文字。'),
+        text('publicSecurityIcon', '', '公安备案图标 URL', '可填写图片 URL 或本站图片路径，留空不显示图标。'),
         radio('glassStrength', ['clear' => '通透', 'frosted' => '磨砂'], 'clear', '玻璃材质', '磨砂模式适合细节较多的背景。'),
         checkbox('featureSwitch', [
             'showReadingProgress' => '显示阅读进度条',
@@ -930,6 +933,40 @@ function lg_site_stats()
         $stats = ['posts' => (int) ($posts['total'] ?? 0), 'categories' => (int) ($categories['total'] ?? 0)];
     }
     return $stats;
+}
+
+/** Render only registration data supplied by this site's theme settings. */
+function lg_render_registration()
+{
+    $items = [
+        [
+            'text' => trim((string) ag_option('beian', '')),
+            'url' => trim((string) ag_option('beianUrl', 'https://beian.miit.gov.cn/')),
+            'icon' => '',
+        ],
+        [
+            'text' => trim((string) ag_option('publicSecurityNumber', '')),
+            'url' => trim((string) ag_option('publicSecurityUrl', '')),
+            'icon' => trim((string) ag_option('publicSecurityIcon', '')),
+        ],
+    ];
+    $items = array_filter($items, static function ($item) { return $item['text'] !== ''; });
+    if (!$items) return;
+
+    echo '<div class="footer-registration">';
+    foreach ($items as $item) {
+        $hasLink = preg_match('~^https?://~i', $item['url']) === 1;
+        echo $hasLink
+            ? '<a class="security-link" href="' . htmlspecialchars($item['url'], ENT_QUOTES) . '" target="_blank" rel="noopener noreferrer">'
+            : '<span class="security-link">';
+        $icon = ag_normalize_media_url($item['icon']);
+        if ($icon !== '' && preg_match('~^(https?://|/(?!/))~i', $icon)) {
+            echo '<img src="' . htmlspecialchars($icon, ENT_QUOTES) . '" alt="" width="14" height="14" loading="lazy">';
+        }
+        echo htmlspecialchars($item['text'], ENT_QUOTES);
+        echo $hasLink ? '</a>' : '</span>';
+    }
+    echo '</div>';
 }
 
 /** Theme-aware avatar shared by the header and profile. */

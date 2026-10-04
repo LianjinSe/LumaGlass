@@ -19,7 +19,7 @@ $weatherLocation = trim((string) ag_option('weatherLocation', 'Shanghai'));
     <h1 id="hero-title"><?php echo htmlspecialchars(ag_option('heroTitle', $options->title)); ?><span class="title-period" aria-hidden="true"></span></h1>
     <p class="hero-subtitle"><?php echo htmlspecialchars(ag_option('heroSubtitle', $options->description)); ?></p>
     <div class="hero-actions"><a class="btn btn-primary" href="#post-stream">开始阅读 <?php echo ag_icon('arrow-right'); ?></a><a class="btn btn-secondary" href="<?php $options->feedUrl(); ?>"><?php echo ag_icon('rss'); ?> 订阅 RSS</a></div>
-    <div class="hero-footnote"><span class="small-dot" aria-hidden="true"></span>关于生活，也关于那些值得记下的瞬间。</div>
+    <?php $heroFootnote = trim((string) ag_option('heroFootnote', '')); if ($heroFootnote !== ''): ?><div class="hero-footnote"><span class="small-dot" aria-hidden="true"></span><?php echo htmlspecialchars($heroFootnote); ?></div><?php endif; ?>
   </div>
   <aside class="profile-card glass-shell" aria-label="个人空间">
     <div class="profile-topline"><span class="eyebrow">Personal space</span><span class="profile-orbit" aria-hidden="true"><?php echo ag_icon('sun'); ?></span></div>

@@ -1,14 +1,15 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; $options = \Helper::options(); ?>
+<?php
+if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+$options = \Helper::options();
+$footerText = trim((string) ag_option('footerText', ''));
+?>
   </div>
   <footer class="site-footer-wrap">
     <div class="site-footer">
-      <div class="footer-main"><div><a class="footer-brand" href="<?php $options->siteUrl(); ?>"><?php echo htmlspecialchars($options->title); ?><span class="heading-period">.</span></a><p><?php echo htmlspecialchars(ag_option('footerText', '让每一个想法，都有停留的地方。')); ?></p></div><div class="footer-social"><?php ag_render_social_links(); ?></div></div>
+      <div class="footer-main"><div><a class="footer-brand" href="<?php $options->siteUrl(); ?>"><?php echo htmlspecialchars($options->title); ?><span class="heading-period">.</span></a><?php if ($footerText !== ''): ?><p><?php echo htmlspecialchars($footerText); ?></p><?php endif; ?></div><div class="footer-social"><?php ag_render_social_links(); ?></div></div>
       <div class="footer-meta">
         <span>© <?php echo date('Y'); ?> <?php echo htmlspecialchars($options->title); ?></span>
-        <div class="footer-registration">
-          <?php if (trim((string) ag_option('beian', '')) !== ''): ?><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer"><?php echo htmlspecialchars(ag_option('beian')); ?></a><?php endif; ?>
-          <?php if (trim((string) ag_option('publicSecurityNumber', '')) !== ''): ?><a class="security-link" href="<?php echo htmlspecialchars(ag_option('publicSecurityUrl', '')); ?>" target="_blank" rel="noopener noreferrer"><?php if (ag_option('publicSecurityIcon', '')): ?><img src="<?php echo htmlspecialchars(ag_option('publicSecurityIcon', '')); ?>" alt="" width="14" height="14" loading="lazy"><?php endif; ?><?php echo htmlspecialchars(ag_option('publicSecurityNumber', '')); ?></a><?php endif; ?>
-        </div>
+        <?php lg_render_registration(); ?>
         <span>Powered by <a href="https://typecho.org/" target="_blank" rel="noopener noreferrer">Typecho</a> · <a href="https://github.com/LianjinSe/LumaGlass/tree/lumaglass" target="_blank" rel="noopener noreferrer" title="LumaGlass，基于 Sandro 的 TypechoGlass">LumaGlass</a></span>
       </div>
     </div>
