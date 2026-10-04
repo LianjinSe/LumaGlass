@@ -21,10 +21,10 @@
 也可以从 fork 的主题分支直接安装：
 
 ```bash
-git clone --branch lumaglass https://github.com/LianjinSe/TypechoGlass.git LumaGlass
+git clone https://github.com/LianjinSe/TypechoGlass.git LumaGlass
 ```
 
-将克隆得到的 `LumaGlass` 文件夹放入 `usr/themes/`。fork 的 `main` 分支保留上游原主题，LumaGlass 的开发位于 [`lumaglass`](https://github.com/LianjinSe/TypechoGlass/tree/lumaglass) 分支。
+将克隆得到的 `LumaGlass` 文件夹放入 `usr/themes/`。fork 仅保留默认分支 [`lumaglass`](https://github.com/LianjinSe/TypechoGlass/tree/lumaglass)，克隆后即可使用 LumaGlass 主题。
 
 首次使用时，没有单独设置的项目会读取 `theme:TypechoGlass` 中的原有设置，不修改该设置记录。保存后使用 LumaGlass 自己的主题配置；可分别维护两套主题。文章自定义字段保持 `cover`、`subtitle`、`featured`、`disableToc`、`linksJson`，无需迁移内容。
 
