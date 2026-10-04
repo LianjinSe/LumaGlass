@@ -1,49 +1,83 @@
-# AeroGlass for Typecho
+# 澄光 · LumaGlass
 
-TypechoGlass 是一套面向 Typecho 1.3 的苹果风格主题，强调毛玻璃、高斯模糊、纯色、亮暗双模式和高扩展性。
+一个为阅读和个人记录设计的 Typecho 1.3 主题。基于 Sandro 的 [TypechoGlass](https://github.com/Sandro-Z/TypechoGlass) 分叉，保留 PHP 模板、主题设置、文章字段和插件接口，重新设计页面结构、材质、排版与交互。
 
-演示站点：https://sandroz.com
+## 设计
 
-## 主题能力
+- 雾蓝与浅紫的静态背景，独立的深色材质，支持自定义背景图片。
+- 悬浮导航、个人空间卡片、阅读面板采用不同的模糊强度与透明度；正文优先保证对比度。
+- 系统字体、适合中文阅读的行距、克制的高光边缘和阴影。
+- 首页文章列表、文章目录、关于页、完整时间归档、友链、分类、标签、搜索、404。
+- 搜索面板支持键盘聚焦、Esc 关闭和 ⌘/Ctrl+K，颜色模式支持浅色、深色与跟随系统。
+- 移动导航、即时按下反馈、可中断的搜索过渡；尊重减少动画、减少透明度和增强对比度偏好。
+- 无 npm 构建、无额外运行时依赖。天气使用 Open-Meteo，并缓存 30 分钟；请求失败时保留已有缓存。
 
-- 苹果风格 glassmorphism 视觉
-- 亮色 / 暗色 / 跟随系统
-- 首页、归档、文章、页面、404、友情链接页、时间归档页
-- Typecho 后台自定义 Logo、社交链接、额外导航、背景图、强调色、分页数量
-- 首页、分类、标签、搜索分页
-- Links Plus 友链插件适配
-- 文章封面、自定义副标题、推荐标记、关闭目录选项
-- 首页的天气小组件
+## 安装与迁移
 
-## 安装
+1. 将整个 `LumaGlass` 文件夹放到 Typecho 的 `usr/themes/`。
+2. 在后台「控制台 → 外观」启用 **LumaGlass**。
+3. 打开主题设置，检查首页文案、Logo、社交链接、背景、备案信息和功能开关，然后保存。
 
-1. `cd /path/to/typecho/data/themes&&git clone https://github.com/Sandro-Z/TypechoGlass.git`(请将`/path/to/typecho/data`改为你的typecho配置文件位置)
-2. 后台启用 `TypechoGlass`
-3. 按需在主题设置里填写 Logo、社交链接、背景图等
-4. 友情链接页可创建一个独立页面并选择 `友情链接页` 模板
-5. 若使用 Links Plus，可一并复制 `usr/plugins/Links/templates/aeroglass` 到插件模板目录
+也可以从 fork 的主题分支直接安装：
 
-## 友情链接页的两种用法
+```bash
+git clone --branch lumaglass https://github.com/LianjinSe/TypechoGlass.git LumaGlass
+```
 
-### 用法一：Links Plus 插件
-在页面正文中使用插件提供的 `<links>...</links>` 或插件输出模板，本主题会自动套用玻璃风格。
+将克隆得到的 `LumaGlass` 文件夹放入 `usr/themes/`。fork 的 `main` 分支保留上游原主题，LumaGlass 的开发位于 [`lumaglass`](https://github.com/LianjinSe/TypechoGlass/tree/lumaglass) 分支。
 
+首次使用时，没有单独设置的项目会读取 `theme:TypechoGlass` 中的原有设置，不修改该设置记录。保存后使用 LumaGlass 自己的主题配置；可分别维护两套主题。文章自定义字段保持 `cover`、`subtitle`、`featured`、`disableToc`、`linksJson`，无需迁移内容。
 
-### 用法二：页面自定义字段
-在友情链接页的 `linksJson` 字段里填写：
+备案信息由站点管理员在主题设置中填写，默认不包含本站备案资料。
+
+归档页面选择「时间归档页」，友链页面选择「友情链接页」。导航自动读取独立页面，并对额外导航中的归档、友链地址去重。
+
+## 插件与友链
+
+保留 Typecho 的 `header()`、`footer()`、正文和评论钩子，可继续使用 EnhancedMarkdown、TinyMCE8、AdminBeautify、FourSeasons 等插件。文章公式按内容加载 MathJax；可由 EnhancedMarkdown 处理的纯 Markdown 公式交给插件，避免重复加载两套渲染器。
+
+友链页保留 Links Plus 的正常输出。如果插件留下未展开的 `[LinksPlus/]`，主题仅从已有 `links` 表读取 `state=1` 的公开友链，用自己的卡片展示。未启用或待审核的数据不会显示。主题不修改插件的许可、配置或审核状态。
+
+也可在页面的 `linksJson` 字段填入：
 
 ```json
 [
   {
     "name": "Typecho",
-    "url": "https://typecho.org",
-    "description": "Typecho 官方站点",
+    "url": "https://typecho.org/",
+    "description": "记录生活，分享想法。",
     "image": ""
   }
 ]
 ```
 
-## 推荐页面
+插件申请表的可用性仍由插件决定；若申请表短代码未展开，主题不会伪造申请功能，访客可使用已配置的邮件链接联系博主。
 
-- `友情链接页`：使用 `page-links.php`
-- `时间归档页`：使用 `page-archive.php`
+## 文件
+
+| 位置 | 职责 |
+| --- | --- |
+| `header.php` / `footer.php` | 导航、搜索、资源、备案与插件钩子 |
+| `index.php` / `sidebar.php` | 首页、个人空间与侧栏 |
+| `post.php` / `page.php` / `archive.php` | 文章、页面与列表 |
+| `page-archive.php` / `page-links.php` | 时间归档与友链 |
+| `functions.php` | 设置、继承、文章卡片及公共逻辑 |
+| `assets/css/tokens.css` | 颜色、材质、阴影 |
+| `assets/css/base.css` | 布局、响应式、无障碍偏好 |
+| `assets/css/components.css` | 控件与搜索面板 |
+| `assets/css/markdown.css` / `pages.css` | 正文与独立页面 |
+| `assets/js/theme.js` / `main.js` / `toc.js` | 颜色模式、交互、天气与目录 |
+
+资源 URL 附带文件修改时间，修改后无需前端编译。
+
+## 验证
+
+开发时使用独立数据库副本和仅监听回环地址的 PHP 预览服务验证页面，未切换正式博客主题。验证覆盖真实文章、独立页面、搜索空结果、归档、友链状态、RSS、桌面与手机布局、搜索焦点和关闭、颜色模式、禁用 JavaScript、减少动画、图片失败及长文本。
+
+## 来源与许可
+
+- 上游：Sandro-Z/TypechoGlass。
+- 分叉基线：`01d99a0e47f199f95273d44585adb5860b9b9ddf`。
+- 新主题版本：1.0.0。
+- 沿用上游 GPL-3.0 许可，完整许可保存在 `LICENSE`。
+- 此目录保留上游 Git 历史，开发分支为 `lumaglass`。`upstream` 指向原主题仓库，`origin` 指向 [LianjinSe/TypechoGlass](https://github.com/LianjinSe/TypechoGlass) fork。

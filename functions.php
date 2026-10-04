@@ -5,11 +5,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 function themeConfig($form)
 {
     $elements = [
-        text('heroEyebrow', 'Apple-inspired Typecho Theme', '首页眉标题', '显示在首页 Hero 小字上方。'),
-        text('heroTitle', 'Write with Clarity.', '首页标题', '首页 Hero 主标题。'),
-        textarea('heroSubtitle', '纯色、毛玻璃、高斯模糊与苹果设计语言风格融合的 Typecho 主题。', '首页副标题', '首页 Hero 副标题。'),
-        text('heroPanelOneLabel', '当前模式', '首页信息卡 1 标题', '首页 Hero 右侧第一张卡片标题。'),
-        text('heroPanelOneValue', '亮 / 暗自适应', '首页信息卡 1 内容', '首页 Hero 右侧第一张卡片内容。'),
+        text('heroEyebrow', 'A little space for thoughts', '首页眉标题', '显示在首页 Hero 小字上方。'),
+        text('heroTitle', '记录，慢慢发光。', '首页标题', '首页 Hero 主标题。'),
+        textarea('heroSubtitle', '把生活的片刻、学习的发现，以及脑海里的零碎，留在这里。', '首页副标题', '首页 Hero 副标题。'),
+        text('heroPanelOneLabel', '最近状态', '首页信息卡 1 标题', '首页 Hero 右侧第一张卡片标题。'),
+        text('heroPanelOneValue', '保持好奇', '首页信息卡 1 内容', '首页 Hero 右侧第一张卡片内容。'),
         text('weatherLocation', 'Shanghai', '天气地点', '首页天气卡使用的地点，建议填写城市英文名，如 Shanghai、Beijing、Tokyo。'),
         radio('colorMode', ['auto' => '跟随系统', 'light' => '浅色', 'dark' => '深色'], 'auto', '默认颜色模式', '仍可在前台手动切换。'),
         text('favicon', '', '浏览器图标 URL', '用于浏览器标签页和收藏夹图标，支持 png、ico、svg。'),
@@ -27,10 +27,14 @@ function themeConfig($form)
         text('categoryPageSize', '12', '分类页每页文章数', '用于分类分页。'),
         textarea('socialLinks', "[\n  {\"name\":\"GitHub\",\"icon\":\"github\",\"url\":\"https://github.com/yourname\"},\n  {\"name\":\"X\",\"icon\":\"x\",\"url\":\"https://x.com/yourname\"},\n  {\"name\":\"RSS\",\"icon\":\"rss\",\"url\":\"/feed/\"}\n]", '社交链接 JSON', '支持自定义名称、图标、地址。图标可用：github、x、telegram、mail、rss、bilibili、youtube、link。'),
         textarea('extraNavLinks', "[\n  {\"name\":\"归档\",\"url\":\"special:archive\"},\n  {\"name\":\"友链\",\"url\":\"special:friends\"}\n]", '额外导航 JSON', '除独立页面外追加的导航。字段：name、url、newtab。支持 special:archive / special:friends 自动匹配对应页面。'),
-        textarea('friendsIntro', '建议在本页正文里使用 Links Plus 短代码，或在 linksJson 字段中直接填写 JSON 友链数据。', '友链页说明', '用于友情链接页顶部说明。'),
+        textarea('friendsIntro', '把喜欢的站点收集起来，让有趣的人彼此相遇。', '友链页说明', '用于友情链接页顶部说明。'),
         textarea('sidebarIntro', '', '侧栏简介', '留空则使用站点描述。'),
-        textarea('footerText', 'AeroGlass 主题 · 轻盈、纯色、可扩展。', '页脚文案', '显示在页脚。'),
-        text('beian', '', '备案或附加文案', '例如 ICP 备案号。'),
+        textarea('footerText', '让每一个想法，都有停留的地方。', '页脚文案', '显示在页脚。'),
+        text('beian', '', 'ICP备案号', '页脚备案信息。'),
+        text('publicSecurityNumber', '', '公安备案号', '留空可隐藏。'),
+        text('publicSecurityUrl', '', '公安备案查询链接'),
+        text('publicSecurityIcon', '', '公安备案图标 URL'),
+        radio('glassStrength', ['clear' => '通透', 'frosted' => '磨砂'], 'clear', '玻璃材质', '磨砂模式适合细节较多的背景。'),
         checkbox('featureSwitch', [
             'showReadingProgress' => '显示阅读进度条',
             'showToc' => '显示文章目录',
@@ -80,60 +84,70 @@ function themeInit($archive)
 
 function text($name, $value, $label, $description = '')
 {
-    $el = new \Typecho\Widget\Helper\Form\Element\Text($name, null, $value, _t($label), _t($description));
+    $el = new \Typecho\Widget\Helper\Form\Element\Text($name, null, lg_setting_default($name, $value), _t($label), _t($description));
     return $el;
 }
 
 function textarea($name, $value, $label, $description = '')
 {
-    return new \Typecho\Widget\Helper\Form\Element\Textarea($name, null, $value, _t($label), _t($description));
+    return new \Typecho\Widget\Helper\Form\Element\Textarea($name, null, lg_setting_default($name, $value), _t($label), _t($description));
 }
 
 function radio($name, $options, $value, $label, $description = '')
 {
-    return new \Typecho\Widget\Helper\Form\Element\Radio($name, $options, $value, _t($label), _t($description));
+    return new \Typecho\Widget\Helper\Form\Element\Radio($name, $options, lg_setting_default($name, $value), _t($label), _t($description));
 }
 
 function checkbox($name, $options, $value, $label, $description = '')
 {
-    return (new \Typecho\Widget\Helper\Form\Element\Checkbox($name, $options, $value, _t($label), _t($description)))->multiMode();
+    return (new \Typecho\Widget\Helper\Form\Element\Checkbox($name, $options, lg_setting_default($name, $value), _t($label), _t($description)))->multiMode();
 }
 
 function text_field($name, $value, $label, $description = '')
 {
-    return new \Typecho\Widget\Helper\Form\Element\Text($name, null, $value, _t($label), _t($description));
+    return new \Typecho\Widget\Helper\Form\Element\Text($name, null, lg_setting_default($name, $value), _t($label), _t($description));
 }
 
 function textarea_field($name, $value, $label, $description = '')
 {
-    return new \Typecho\Widget\Helper\Form\Element\Textarea($name, null, $value, _t($label), _t($description));
+    return new \Typecho\Widget\Helper\Form\Element\Textarea($name, null, lg_setting_default($name, $value), _t($label), _t($description));
 }
 
 function radio_field($name, $options, $value, $label, $description = '')
 {
-    return new \Typecho\Widget\Helper\Form\Element\Radio($name, $options, $value, _t($label), _t($description));
+    return new \Typecho\Widget\Helper\Form\Element\Radio($name, $options, lg_setting_default($name, $value), _t($label), _t($description));
+}
+
+function lg_legacy_settings()
+{
+    static $settings = null;
+    if ($settings === null) {
+        $raw = \Helper::options()->{'theme:TypechoGlass'};
+        $decoded = is_string($raw) ? json_decode($raw, true) : null;
+        $settings = is_array($decoded) ? $decoded : [];
+    }
+    return $settings;
+}
+
+function lg_setting_default($name, $default)
+{
+    $settings = lg_legacy_settings();
+    return array_key_exists($name, $settings) && $settings[$name] !== null ? $settings[$name] : $default;
 }
 
 function ag_option($name, $default = '')
 {
     $options = \Helper::options();
     if (isset($options->$name)) {
-        $value = $options->$name;
-        if ($value === null || $value === '') {
-            return $default;
-        }
-        return $value;
+        return $options->$name === null ? $default : $options->$name;
     }
-    return $default;
+    return lg_setting_default($name, $default);
 }
 
 function ag_option_bool($name, $default = false)
 {
-    $switches = ag_option('featureSwitch', []);
-    if (!is_array($switches)) {
-        $switches = (array) $switches;
-    }
-    return in_array($name, $switches, true) || (empty($switches) && $default);
+    $switches = ag_option('featureSwitch', null);
+    return $switches === null ? $default : in_array($name, (array) $switches, true);
 }
 
 function ag_asset($path)
@@ -207,7 +221,13 @@ function ag_get_archive_math_sources($archive)
 
 function ag_render_math_assets($archive)
 {
-    if (!ag_archive_has_math($archive)) {
+    if (!ag_archive_has_math($archive)) return;
+    $plugins = \Helper::options()->plugins;
+    $enhancedMath = isset($plugins['activated']['EnhancedMarkdown'])
+        && \Helper::options()->plugin('EnhancedMarkdown')->math === '1'
+        && strpos((string) $archive->text, '<!--markdown-->') === 0
+        && !preg_match('/<\w+[^>]*>/u', substr((string) $archive->text, 15));
+    if ($enhancedMath || !ag_archive_has_math($archive)) {
         return;
     }
 
@@ -547,18 +567,19 @@ function ag_is_current_nav_link($archive, $url)
 
 function ag_document_title($archive)
 {
-    if ($archive->is('index')) {
-        $heroTitle = trim((string) ag_option('heroTitle', $archive->options->description));
-        $siteTitle = trim((string) $archive->options->title);
-        if ($heroTitle === '' || $heroTitle === $siteTitle) {
-            return $siteTitle !== '' ? $siteTitle : $heroTitle;
-        }
-        return ag_join_title_parts([$siteTitle, $heroTitle]);
+    $siteTitle = trim((string) \Helper::options()->title);
+    if ($archive->is('index')) return $siteTitle;
+    if ($archive->is('post') || $archive->is('page')) {
+        $pageTitle = html_entity_decode((string) $archive->title, ENT_QUOTES, 'UTF-8');
+    } elseif ($archive->is('404')) {
+        $pageTitle = '页面未找到';
+    } else {
+        $pageTitle = method_exists($archive, 'getArchiveTitle') ? (string) $archive->getArchiveTitle() : '文章列表';
+        if ($archive->is('search')) $pageTitle = '搜索：' . $pageTitle;
+        elseif ($archive->is('category')) $pageTitle = '分类：' . $pageTitle;
+        elseif ($archive->is('tag')) $pageTitle = '标签：' . $pageTitle;
     }
-    return ag_join_title_parts([
-        trim((string) $archive->title),
-        trim((string) $archive->options->title),
-    ]);
+    return ag_join_title_parts([$pageTitle, $siteTitle]);
 }
 
 function ag_join_title_parts($parts, $separator = ' - ')
@@ -582,14 +603,16 @@ function ag_meta_description($archive)
         if (isset($archive->fields->subtitle) && trim((string) $archive->fields->subtitle) !== '') {
             return trim((string) $archive->fields->subtitle);
         }
-        return ag_excerpt_plain($archive, 140);
+        $description = ag_excerpt_plain($archive, 140);
+        return $description !== '' ? $description : (string) \Helper::options()->description;
     }
-    return $archive->options->description;
+    return \Helper::options()->description;
 }
 
 function ag_excerpt_plain($archive, $length = 140)
 {
     $text = ag_strip_math_expressions((string) $archive->text);
+    $text = preg_replace('/\[LinksPlus[^\]]*\]/i', '', $text);
     $text = trim(strip_tags($text));
     $text = preg_replace('/\s+/u', ' ', $text);
     if (!is_string($text)) {
@@ -745,30 +768,25 @@ function ag_primary_category_name($archive)
 function ag_render_post_card($archive)
 {
     $cover = ag_get_card_cover($archive);
+    $subtitle = isset($archive->fields->subtitle) ? trim((string) $archive->fields->subtitle) : '';
     ?>
-    <article class="post-card glass-card">
+    <article class="post-card">
       <a class="post-card-link" href="<?php $archive->permalink(); ?>">
         <div class="post-visual<?php if (!$cover): ?> no-image<?php endif; ?>">
           <?php if ($cover): ?>
-            <img src="<?php echo htmlspecialchars($cover); ?>" alt="<?php $archive->title(); ?>">
+            <img src="<?php echo htmlspecialchars($cover, ENT_QUOTES); ?>" alt="" loading="lazy" decoding="async">
           <?php else: ?>
-            <div class="orb orb-a"></div>
-            <div class="orb orb-b"></div>
-            <div class="orb orb-c"></div>
+            <span class="cover-glyph" aria-hidden="true"><?php echo ag_icon('book'); ?></span>
+          <?php endif; ?>
+          <?php if (isset($archive->fields->featured) && $archive->fields->featured == '1'): ?>
+            <span class="featured-label">精选</span>
           <?php endif; ?>
         </div>
-
         <div class="post-card-body">
-          <div class="meta-row">
-            <span class="meta-pill"><?php echo htmlspecialchars(ag_primary_category_name($archive)); ?></span>
-            <span class="meta-time"><?php $archive->date('Y-m-d'); ?></span>
-          </div>
-          <h2><?php $archive->title(); ?></h2>
-          <p><?php echo htmlspecialchars(isset($archive->fields->subtitle) && trim((string) $archive->fields->subtitle) !== '' ? (string) $archive->fields->subtitle : ag_excerpt_plain($archive, 90)); ?></p>
-          <div class="post-card-foot">
-            <span><?php echo ag_estimated_reading_time($archive->text); ?> <?php _e('分钟阅读'); ?></span>
-            <span><?php $archive->commentsNum('0 评论', '1 评论', '%d 评论'); ?></span>
-          </div>
+          <div class="meta-row"><span><?php echo htmlspecialchars(ag_primary_category_name($archive)); ?></span><span class="meta-dot" aria-hidden="true">·</span><time datetime="<?php $archive->date('c'); ?>"><?php $archive->date('Y.m.d'); ?></time></div>
+          <h3><?php echo htmlspecialchars(html_entity_decode((string) $archive->title, ENT_QUOTES, 'UTF-8')); ?></h3>
+          <p><?php echo htmlspecialchars($subtitle !== '' ? $subtitle : ag_excerpt_plain($archive, 90)); ?></p>
+          <div class="post-card-foot"><span><?php echo ag_estimated_reading_time($archive->text); ?> 分钟阅读</span><span class="read-link">阅读全文 <?php echo ag_icon('arrow-right'); ?></span></div>
         </div>
       </a>
     </article>
@@ -800,6 +818,11 @@ function ag_render_social_links()
 function ag_icon($name)
 {
     $icons = [
+        'search' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/></svg>',
+        'arrow-right' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>',
+        'close' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="m6 6 12 12M18 6 6 18"/></svg>',
+        'monitor' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="3"/><path d="M8 21h8m-4-4v4"/></svg>',
+        'book' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1 3-2 6-2 9-1V4c-3-1-6-1-9 1Zm0 0v15"/></svg>',
         'theme' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12.79A9 9 0 1 1 11.21 3c0 .34 0 .68.05 1.01A7 7 0 0 0 20 12c.34.05.68.05 1 .79Z"/></svg>',
         'sun' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M4.93 4.93l1.77 1.77M17.3 17.3l1.77 1.77M2 12h2.5M19.5 12H22M4.93 19.07l1.77-1.77M17.3 6.7l1.77-1.77"/></svg>',
         'moon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3c0 .34 0 .68.05 1.01A7 7 0 0 0 20 12c.34.05.68.05 1 .79Z"/></svg>',
@@ -893,4 +916,84 @@ function ag_comment_item($comments, $options)
       <?php endif; ?>
     </li>
     <?php
+}
+
+
+/** Published-only statistics for the personal-space card. */
+function lg_site_stats()
+{
+    static $stats = null;
+    if ($stats === null) {
+        $db = \Typecho\Db::get();
+        $posts = $db->fetchRow($db->select(['COUNT(cid)' => 'total'])->from('table.contents')->where('type = ?', 'post')->where('status = ?', 'publish')->where('created <= ?', time()));
+        $categories = $db->fetchRow($db->select(['COUNT(mid)' => 'total'])->from('table.metas')->where('type = ?', 'category')->where('count > ?', 0));
+        $stats = ['posts' => (int) ($posts['total'] ?? 0), 'categories' => (int) ($categories['total'] ?? 0)];
+    }
+    return $stats;
+}
+
+/** Theme-aware avatar shared by the header and profile. */
+function lg_avatar($class = '')
+{
+    $light = trim((string) ag_option('logoLight', ''));
+    $dark = trim((string) ag_option('logoDark', ''));
+    echo '<span data-initial="' . htmlspecialchars(ag_option('brandInitial', 'L'), ENT_QUOTES) . '" class="avatar ' . htmlspecialchars($class, ENT_QUOTES) . ($dark !== '' ? ' has-dark-logo' : '') . '">';
+    if ($light !== '') {
+        echo '<img class="logo-light" src="' . htmlspecialchars($light, ENT_QUOTES) . '" alt="" decoding="async">';
+    } else {
+        echo '<span class="brand-mark">' . htmlspecialchars(ag_option('brandInitial', 'L')) . '</span>';
+    }
+    if ($dark !== '') echo '<img class="logo-dark" src="' . htmlspecialchars($dark, ENT_QUOTES) . '" alt="" decoding="async">';
+    echo '</span>';
+}
+
+
+/** Read only approved, public friend data; never alter plugin state or licensing. */
+function lg_public_friends()
+{
+    try {
+        $db = \Typecho\Db::get();
+        return $db->fetchAll($db->select('name', 'url', 'image', 'description')->from('table.links')->where('state = ?', 1)->order('order', \Typecho\Db::SORT_ASC));
+    } catch (\Throwable $error) {
+        return [];
+    }
+}
+
+function lg_render_friend_cards($items)
+{
+    echo '<div class="friend-grid">';
+    foreach ($items as $item) {
+        $url = trim((string) ($item['url'] ?? ''));
+        $name = trim((string) ($item['name'] ?? ''));
+        if ($name === '' || !preg_match('~^https?://~i', $url)) continue;
+        echo '<a class="friend-card" href="' . htmlspecialchars($url, ENT_QUOTES) . '" target="_blank" rel="noopener noreferrer"><div class="friend-avatar">';
+        if (!empty($item['image']) && preg_match('~^(https?://|/)~i', $item['image'])) {
+            echo '<img src="' . htmlspecialchars($item['image'], ENT_QUOTES) . '" alt="" loading="lazy" decoding="async">';
+        } else {
+            echo htmlspecialchars(mb_substr($name, 0, 1, 'UTF-8'));
+        }
+        echo '</div><div class="friend-meta"><strong>' . htmlspecialchars($name) . '</strong><p>' . htmlspecialchars($item['description'] ?? '') . '</p></div></a>';
+    }
+    echo '</div>';
+}
+
+/** Keep plugin output; replace only shortcodes the plugin leaves unresolved. */
+function lg_friends_content($archive)
+{
+    ob_start();
+    $archive->content();
+    $html = ob_get_clean();
+    $html = preg_replace('/<p>\s*(\[LinksPlus\s*\/\])\s*<\/p>/i', '$1', $html);
+    $html = preg_replace('/<p>\s*\[LinksPlus\s+OnlyForm\s*\/\]\s*<\/p>/i', '', $html);
+    $pattern = '/\[LinksPlus\s*\/\]/i';
+    if (preg_match($pattern, $html)) {
+        ob_start();
+        $items = lg_public_friends();
+        if ($items) lg_render_friend_cards($items);
+        else echo '<div class="empty-state friends-empty"><span class="empty-icon">' . ag_icon('link') . '</span><h2>好的相遇，值得慢慢等待。</h2><p>这里收集有趣的人，以及他们认真记录的世界。</p></div>';
+        $cards = ob_get_clean();
+        $html = preg_replace_callback($pattern, static function () use ($cards) { return $cards; }, $html);
+    }
+    $html = preg_replace('/\[LinksPlus\s+OnlyForm\s*\/\]/i', '', $html);
+    echo $html;
 }

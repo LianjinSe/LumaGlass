@@ -1,30 +1,30 @@
 (function () {
   const root = document.documentElement;
-  const storageKey = 'aeroglass-theme';
-  const preferred = (window.AeroGlassConfig && window.AeroGlassConfig.colorMode) || root.getAttribute('data-theme-mode') || 'auto';
-
-  function applyTheme(mode) {
-    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const realMode = mode === 'auto' ? (systemDark ? 'dark' : 'light') : mode;
-    root.setAttribute('data-theme', realMode);
-    root.dataset.themeMode = mode;
-  }
-
-  const saved = localStorage.getItem(storageKey) || preferred;
-  applyTheme(saved);
-
   const toggle = document.getElementById('theme-toggle');
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      const current = localStorage.getItem(storageKey) || preferred;
-      const next = current === 'auto' ? 'light' : current === 'light' ? 'dark' : 'auto';
-      localStorage.setItem(storageKey, next);
-      applyTheme(next);
-    });
+  const system = window.matchMedia('(prefers-color-scheme: dark)');
+  const modes = ['auto', 'light', 'dark'];
+  const labels = { auto: '跟随系统', light: '浅色', dark: '深色' };
+  let mode = root.dataset.themeMode || 'auto';
+  function applyTheme() {
+    if (!modes.includes(mode)) mode = 'auto';
+    const actual = mode === 'auto' ? (system.matches ? 'dark' : 'light') : mode;
+    root.dataset.themeMode = mode;
+    root.dataset.theme = actual;
+    if (toggle) {
+      const next = modes[(modes.indexOf(mode) + 1) % modes.length];
+      const label = labels[mode] + '模式，点击切换为' + labels[next];
+      toggle.setAttribute('aria-label', label);
+      toggle.title = label;
+    }
+    document.dispatchEvent(new Event('lg:theme-change'));
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.content = actual === 'dark' ? '#111722' : '#edf1f8';
   }
-
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
-    const current = localStorage.getItem(storageKey) || preferred;
-    if (current === 'auto') applyTheme('auto');
+  applyTheme();
+  if (toggle) toggle.addEventListener('click', () => {
+    mode = modes[(modes.indexOf(mode) + 1) % modes.length];
+    try { localStorage.setItem('lumaglass-theme', mode); } catch (error) {}
+    applyTheme();
   });
+  system.addEventListener('change', () => { if (mode === 'auto') applyTheme(); });
 })();

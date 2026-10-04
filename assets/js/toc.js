@@ -68,7 +68,10 @@
     });
 
     tocItems.forEach(function (item) {
-      item.classList.toggle('is-active', item.dataset.headingId === activeId);
+      const active = item.dataset.headingId === activeId;
+      item.classList.toggle('is-active', active);
+      if (active) item.setAttribute('aria-current', 'location');
+      else item.removeAttribute('aria-current');
     });
   }
 
