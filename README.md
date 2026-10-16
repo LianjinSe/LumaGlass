@@ -36,6 +36,8 @@ ICP备案号、公安备案号、公安备案查询链接和图标均默认为�
 
 「首页西文字体」可单独选择 Playfair Display，替换首页的西文字母和数字；英文眉题、首页大标题和站名使用 400 字重的斜体，中文继续使用所选界面字体。仅首页按需加载本地 Latin WOFF2 文件，共约 75 KiB，文章及其他页面不加载。默认跟随界面字体。
 
+页脚和侧栏的联系方式由「社交链接 JSON」设置。GitHub、QQ、邮箱使用 Tabler 线条图标，对应 `icon` 值为 `github`、`qq`、`mail`；名称和地址分别填写 `name`、`url`，无需修改模板。
+
 归档页面选择「时间归档页」，友链页面选择「友情链接页」。导航自动读取独立页面，并对额外导航中的归档、友链地址去重。
 
 ## 插件与友链
@@ -96,4 +98,5 @@ php tests/site-settings.php /path/to/typecho
 - 沿用上游 GPL-3.0 许可，完整许可保存在 `LICENSE`。
 - 思源宋体分片独立遵循 SIL OFL 1.1，字体来源、构建方式及许可见 `assets/fonts/source-han-serif/`。
 - Playfair Display 独立遵循 SIL OFL 1.1，字体来源及许可见 `assets/fonts/playfair-display/`。
+- GitHub、QQ、邮箱图标来自 [Tabler Icons](https://github.com/tabler/tabler-icons) v3.35.0，遵循 MIT 许可，完整许可见 `assets/icons/LICENSE.txt`。
 - 此目录保留上游 Git 历史，开发分支为 `lumaglass`。`upstream` 指向原主题仓库，`origin` 指向 [LianjinSe/LumaGlass](https://github.com/LianjinSe/LumaGlass) fork。

@@ -28,7 +28,7 @@ function themeConfig($form)
         text('homePageSize', '10', '首页每页文章数', '用于首页文章分页。'),
         text('archivePageSize', '10', '归档/搜索每页文章数', '用于普通列表页。'),
         text('categoryPageSize', '12', '分类页每页文章数', '用于分类分页。'),
-        textarea('socialLinks', "[\n  {\"name\":\"GitHub\",\"icon\":\"github\",\"url\":\"https://github.com/yourname\"},\n  {\"name\":\"X\",\"icon\":\"x\",\"url\":\"https://x.com/yourname\"},\n  {\"name\":\"RSS\",\"icon\":\"rss\",\"url\":\"/feed/\"}\n]", '社交链接 JSON', '支持自定义名称、图标、地址。图标可用：github、x、telegram、mail、rss、bilibili、youtube、link。'),
+        textarea('socialLinks', "[\n  {\"name\":\"GitHub\",\"icon\":\"github\",\"url\":\"https://github.com/yourname\"},\n  {\"name\":\"X\",\"icon\":\"x\",\"url\":\"https://x.com/yourname\"},\n  {\"name\":\"RSS\",\"icon\":\"rss\",\"url\":\"/feed/\"}\n]", '社交链接 JSON', '支持自定义名称、图标、地址。图标可用：github、qq、mail、x、telegram、rss、bilibili、youtube、link。GitHub、QQ、邮箱采用 Tabler 线条图标。'),
         textarea('extraNavLinks', "[\n  {\"name\":\"归档\",\"url\":\"special:archive\"},\n  {\"name\":\"友链\",\"url\":\"special:friends\"}\n]", '额外导航 JSON', '除独立页面外追加的导航。字段：name、url、newtab。支持 special:archive / special:friends 自动匹配对应页面。'),
         textarea('friendsIntro', '把喜欢的站点收集起来，让有趣的人彼此相遇。', '友链页说明', '用于友情链接页顶部说明。'),
         textarea('sidebarIntro', '', '侧栏简介', '留空则使用站点描述。'),
@@ -825,6 +825,7 @@ function ag_render_social_links()
     }
 }
 
+// GitHub, QQ and mail SVGs: Tabler Icons v3.35.0 (MIT), see assets/icons/LICENSE.txt.
 function ag_icon($name)
 {
     $icons = [
@@ -838,10 +839,11 @@ function ag_icon($name)
         'moon' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3c0 .34 0 .68.05 1.01A7 7 0 0 0 20 12c.34.05.68.05 1 .79Z"/></svg>',
         'menu' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>',
         'arrow-up' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m6 15 6-6 6 6"/><path d="M12 9v10"/></svg>',
-        'github' => '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.67.5 12.05c0 5.1 3.3 9.42 7.88 10.95.58.1.79-.26.79-.57v-2.02c-3.2.7-3.88-1.38-3.88-1.38-.53-1.35-1.28-1.71-1.28-1.71-1.04-.72.08-.71.08-.71 1.15.08 1.76 1.19 1.76 1.19 1.02 1.76 2.67 1.25 3.32.96.1-.75.4-1.25.72-1.54-2.56-.3-5.25-1.29-5.25-5.73 0-1.27.46-2.31 1.2-3.12-.12-.3-.52-1.52.12-3.17 0 0 .98-.31 3.2 1.19a10.9 10.9 0 0 1 5.83 0c2.22-1.5 3.2-1.19 3.2-1.19.64 1.65.24 2.87.12 3.17.75.81 1.2 1.85 1.2 3.12 0 4.45-2.7 5.42-5.28 5.72.41.35.77 1.04.77 2.1v3.11c0 .31.21.68.8.57A11.56 11.56 0 0 0 23.5 12.05C23.5 5.67 18.35.5 12 .5Z"/></svg>',
+        'github' => '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" /></svg>',
         'x' => '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.77 7.74L23.2 22h-6.25l-4.9-6.9L6.02 22H2.9l7.23-8.26L.8 2h6.4l4.43 6.25L18.9 2Zm-1.1 18h1.73L6.26 3.9H4.4L17.8 20Z"/></svg>',
         'telegram' => '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.78 18.65c-.35 0-.29-.13-.41-.47l-1.05-3.46 8.1-5.13c.38-.23.73-.1.45.16l-6.56 5.92-.24 3.58c.35 0 .5-.16.7-.35l1.7-1.65 3.54 2.61c.66.37 1.12.18 1.29-.62l2.33-10.98c.25-.98-.37-1.42-1-1.14L4.78 12.5c-.95.39-.94.92-.17 1.16l3.61 1.13 8.36-5.28c.4-.24.76-.1.46.17"/></svg>',
-        'mail' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>',
+        'mail' => '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>',
+        'qq' => '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9.748a14.716 14.716 0 0 0 11.995 -.052c.275 -9.236 -11.104 -11.256 -11.995 .052z" /><path d="M18 10c.984 2.762 1.949 4.765 2 7.153c.014 .688 -.664 1.346 -1.184 .303c-.346 -.696 -.952 -1.181 -1.816 -1.456" /><path d="M17 16c.031 1.831 .147 3.102 -1 4" /><path d="M8 20c-1.099 -.87 -.914 -2.24 -1 -4" /><path d="M6 10c-.783 2.338 -1.742 4.12 -1.968 6.43c-.217 2.227 .716 1.644 1.16 .917c.296 -.487 .898 -.934 1.808 -1.347" /><path d="M15.898 13l-.476 -2" /><path d="M8 20l-1.5 1c-.5 .5 -.5 1 .5 1h10c1 0 1 -.5 .5 -1l-1.5 -1" /><path d="M13.75 7m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /><path d="M10.25 7m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" /></svg>',
         'rss' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1.5" fill="currentColor" stroke="none"/></svg>',
         'bilibili' => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 5 9 3m6 2 2-2"/><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M9.5 11.5v2m5-2v2"/><path d="M8 16c1 .8 2.3 1.2 4 1.2s3-.4 4-1.2"/></svg>',
         'youtube' => '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.58 7.2a2.98 2.98 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.48.5a2.98 2.98 0 0 0-2.1 2.1C1.9 9 1.9 12 1.9 12s0 3 .52 4.8a2.98 2.98 0 0 0 2.1 2.1c1.78.5 7.48.5 7.48.5s5.7 0 7.48-.5a2.98 2.98 0 0 0 2.1-2.1c.52-1.8.52-4.8.52-4.8s0-3-.52-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>',

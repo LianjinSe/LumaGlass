@@ -7,7 +7,7 @@
 .chip.is-active, .meta-pill.accent { background: var(--text); color: var(--bg); }
 .meta-pill { background: var(--control-bg); padding: 6px 12px; }
 .social-link { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 8px 10px; border-radius: 13px; font-size: .68rem; color: var(--text-2); transition: background 160ms ease, color 160ms ease; }
-.social-link svg { width: 16px; height: 16px; }
+.social-link svg { width: 20px; height: 20px; }
 .icon-wrap { display: inline-flex; align-items: center; justify-content: center; }
 .pagination-wrap { padding-block: 15px 20px; }
 .pagination-wrap:empty { display: none; }
