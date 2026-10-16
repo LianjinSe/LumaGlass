@@ -20,5 +20,7 @@ weight 400 while keeping CSS `font-style: normal`. This lets display labels
 use italic Latin glyphs without slanting or changing the weight of Chinese
 fallback glyphs. The alias does not modify or rename the font binaries.
 
-The stylesheet is included only on homepage lists when the theme setting
-`homeLatinFont` is `playfair-display`. Other pages keep their existing fonts.
+The stylesheet is included on homepage lists and the About page (slug `about`)
+when the theme setting `homeLatinFont` is `playfair-display`. The About page
+also inherits the interface font for its introduction. Other pages keep their
+existing fonts.

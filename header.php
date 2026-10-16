@@ -3,7 +3,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $options = \Helper::options();
 $colorMode = ag_option('colorMode', 'auto');
 $interfaceFont = lg_interface_font();
-$useHomePlayfair = $this->is('index') && ag_option('homeLatinFont', 'interface') === 'playfair-display';
+$isAboutPage = $this->is('page', 'about');
+$useHomePlayfair = ($this->is('index') || $isAboutPage) && ag_option('homeLatinFont', 'interface') === 'playfair-display';
 $title = ag_document_title($this);
 $favicon = ag_get_favicon_url();
 $pages = ag_get_published_pages();
@@ -54,7 +55,7 @@ $hasMath = ag_archive_has_math($this);
   <?php ag_render_math_assets($this); ?>
   <?php $this->header('description=&social=0&rss2='); ?>
 </head>
-<body class="<?php echo $this->is('post') ? 'is-post' : ($this->is('page') ? 'is-page' : 'is-list'); ?><?php if ($hasMath): ?> mathjax-ignore<?php endif; ?>">
+<body class="<?php echo $this->is('post') ? 'is-post' : ($this->is('page') ? 'is-page' : 'is-list'); ?><?php if ($isAboutPage): ?> is-about<?php endif; ?><?php if ($hasMath): ?> mathjax-ignore<?php endif; ?>">
   <a class="skip-link" href="#main-content">跳到内容</a>
   <div class="page-bg" aria-hidden="true"><div class="landscape"></div><div class="page-bg-image"></div><div class="page-grain"></div></div>
   <?php if (ag_option_bool('showReadingProgress', true)): ?><div class="reading-progress" id="reading-progress" aria-hidden="true"></div><?php endif; ?>

@@ -1,4 +1,5 @@
 .hero-archive, .single-header { padding: 40px 12px 44px; }
+.is-about .entry-content { font-family: inherit; }
 .hero-archive h1, .single-header h1 { font-size: clamp(2rem, 4.5vw, 3.7rem); line-height: 1.2; letter-spacing: -.045em; font-weight: 650; margin: 18px 0; overflow-wrap: anywhere; text-wrap: balance; }
 .single-article { padding-top: 5px; }
 .single-header { max-width: 860px; }
