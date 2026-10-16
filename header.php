@@ -3,6 +3,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $options = \Helper::options();
 $colorMode = ag_option('colorMode', 'auto');
 $interfaceFont = lg_interface_font();
+$useHomePlayfair = $this->is('index') && ag_option('homeLatinFont', 'interface') === 'playfair-display';
 $title = ag_document_title($this);
 $favicon = ag_get_favicon_url();
 $pages = ag_get_published_pages();
@@ -11,7 +12,7 @@ $darkBg = trim((string) ag_option('backgroundDark', ''));
 $hasMath = ag_archive_has_math($this);
 ?>
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme-mode="<?php echo htmlspecialchars($colorMode); ?>" data-interface-font="<?php echo $interfaceFont; ?>" data-glass="<?php echo ag_option('glassStrength', 'clear') === 'frosted' ? 'frosted' : 'clear'; ?>">
+<html lang="zh-CN" data-theme-mode="<?php echo htmlspecialchars($colorMode); ?>" data-interface-font="<?php echo $interfaceFont; ?>"<?php if ($useHomePlayfair): ?> data-home-latin-font="playfair-display"<?php endif; ?> data-glass="<?php echo ag_option('glassStrength', 'clear') === 'frosted' ? 'frosted' : 'clear'; ?>">
 <head>
   <meta charset="<?php $options->charset(); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -39,6 +40,7 @@ $hasMath = ag_archive_has_math($this);
     <link rel="stylesheet" href="<?php echo ag_asset('assets/css/' . $css . '.css'); ?>">
   <?php endforeach; ?>
   <?php if ($interfaceFont === 'source-han-serif'): ?><link rel="stylesheet" href="<?php echo ag_asset('assets/fonts/source-han-serif/font.css'); ?>"><?php endif; ?>
+  <?php if ($useHomePlayfair): ?><link rel="stylesheet" href="<?php echo ag_asset('assets/fonts/playfair-display/font.css'); ?>"><?php endif; ?>
   <style>
     :root {
       --brand-light: <?php echo preg_match('/^#[0-9a-f]{3,8}$/i', (string) ag_option('accentLight', '#0071e3')) ? ag_option('accentLight', '#0071e3') : '#0071e3'; ?>;

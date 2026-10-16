@@ -14,6 +14,7 @@ function themeConfig($form)
         text('weatherLocation', 'Shanghai', '天气地点', '首页天气卡使用的地点，建议填写城市英文名，如 Shanghai、Beijing、Tokyo。'),
         radio('colorMode', ['auto' => '跟随系统', 'light' => '浅色', 'dark' => '深色'], 'auto', '默认颜色模式', '仍可在前台手动切换。'),
         radio('interfaceFont', ['system' => '系统字体', 'source-han-serif' => '思源宋体'], 'system', '界面字体', '用于导航、首页标题、文章标题、卡片和按钮；文章正文与代码字体保持原样。'),
+        radio('homeLatinFont', ['interface' => '跟随界面字体', 'playfair-display' => 'Playfair Display'], 'interface', '首页西文字体', '只替换首页的西文字母和数字；英文眉题、首页大标题与站名使用斜体，中文和文章正文保留原有字体。'),
         text('favicon', '', '浏览器图标 URL', '用于浏览器标签页和收藏夹图标，支持 png、ico、svg。'),
         text('logoLight', '', '浅色 Logo URL', '可留空，留空则使用文字标识。'),
         text('logoDark', '', '深色 Logo URL', '可留空。'),

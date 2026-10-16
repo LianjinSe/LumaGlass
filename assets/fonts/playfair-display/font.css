@@ -1,0 +1,41 @@
+/* Original Google Fonts Latin subsets; see OFL.txt and README.md. */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("playfair-display-latin-normal-e0c764a8e9e1.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  src: url("playfair-display-latin-italic-54af24bd0f91.woff2") format("woff2");
+  font-style: italic;
+  font-weight: 400 900;
+  font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+@font-face {
+  font-family: "Playfair Display Italic";
+  src: url("playfair-display-latin-italic-54af24bd0f91.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 900;
+  font-variation-settings: "wght" 400;
+  font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+
+html[data-home-latin-font="playfair-display"] body {
+  font-family: "Playfair Display", var(--font-interface);
+}
+
+/* The italic family applies only to Latin glyphs, leaving Chinese upright
+   with its existing size and weight. */
+html[data-home-latin-font="playfair-display"] .eyebrow,
+html[data-home-latin-font="playfair-display"] .hero-copy h1,
+html[data-home-latin-font="playfair-display"] .brand-text strong,
+html[data-home-latin-font="playfair-display"] .footer-brand {
+  font-family: "Playfair Display Italic", var(--font-interface);
+}

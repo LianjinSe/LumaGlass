@@ -34,6 +34,8 @@ ICP备案号、公安备案号、公安备案查询链接和图标均默认为�
 
 在主题设置的「界面字体」中可选择思源宋体，用于导航、首页和文章标题、卡片及按钮。正文和代码字体不受影响。字体由本地 WOFF2 分片按需加载，选择系统字体时不请求思源宋体资源。默认仍为系统字体，具体站点的选择保存在数据库中。
 
+「首页西文字体」可单独选择 Playfair Display，替换首页的西文字母和数字；英文眉题、首页大标题和站名使用 400 字重的斜体，中文继续使用所选界面字体。仅首页按需加载本地 Latin WOFF2 文件，共约 75 KiB，文章及其他页面不加载。默认跟随界面字体。
+
 归档页面选择「时间归档页」，友链页面选择「友情链接页」。导航自动读取独立页面，并对额外导航中的归档、友链地址去重。
 
 ## 插件与友链
@@ -93,4 +95,5 @@ php tests/site-settings.php /path/to/typecho
 - 新主题版本：1.0.0。
 - 沿用上游 GPL-3.0 许可，完整许可保存在 `LICENSE`。
 - 思源宋体分片独立遵循 SIL OFL 1.1，字体来源、构建方式及许可见 `assets/fonts/source-han-serif/`。
+- Playfair Display 独立遵循 SIL OFL 1.1，字体来源及许可见 `assets/fonts/playfair-display/`。
 - 此目录保留上游 Git 历史，开发分支为 `lumaglass`。`upstream` 指向原主题仓库，`origin` 指向 [LianjinSe/LumaGlass](https://github.com/LianjinSe/LumaGlass) fork。
