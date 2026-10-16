@@ -36,7 +36,7 @@ html[data-home-latin-font="playfair-display"] body {
 html[data-home-latin-font="playfair-display"] .eyebrow,
 html[data-home-latin-font="playfair-display"] .hero-copy h1,
 html[data-home-latin-font="playfair-display"] .is-about .single-header h1,
-html[data-home-latin-font="playfair-display"] .brand-text strong,
-html[data-home-latin-font="playfair-display"] .footer-brand {
+.brand-text strong,
+.footer-brand {
   font-family: "Playfair Display Italic", var(--font-interface);
 }

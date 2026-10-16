@@ -4,7 +4,8 @@ $options = \Helper::options();
 $colorMode = ag_option('colorMode', 'auto');
 $interfaceFont = lg_interface_font();
 $isAboutPage = $this->is('page', 'about');
-$useHomePlayfair = ($this->is('index') || $isAboutPage) && ag_option('homeLatinFont', 'interface') === 'playfair-display';
+$usePlayfair = ag_option('homeLatinFont', 'interface') === 'playfair-display';
+$useHomePlayfair = ($this->is('index') || $isAboutPage) && $usePlayfair;
 $title = ag_document_title($this);
 $favicon = ag_get_favicon_url();
 $pages = ag_get_published_pages();
@@ -41,7 +42,7 @@ $hasMath = ag_archive_has_math($this);
     <link rel="stylesheet" href="<?php echo ag_asset('assets/css/' . $css . '.css'); ?>">
   <?php endforeach; ?>
   <?php if ($interfaceFont === 'source-han-serif'): ?><link rel="stylesheet" href="<?php echo ag_asset('assets/fonts/source-han-serif/font.css'); ?>"><?php endif; ?>
-  <?php if ($useHomePlayfair): ?><link rel="stylesheet" href="<?php echo ag_asset('assets/fonts/playfair-display/font.css'); ?>"><?php endif; ?>
+  <?php if ($usePlayfair): ?><link rel="stylesheet" href="<?php echo ag_asset('assets/fonts/playfair-display/font.css'); ?>"><?php endif; ?>
   <style>
     :root {
       --brand-light: <?php echo preg_match('/^#[0-9a-f]{3,8}$/i', (string) ag_option('accentLight', '#0071e3')) ? ag_option('accentLight', '#0071e3') : '#0071e3'; ?>;

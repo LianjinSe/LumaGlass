@@ -20,7 +20,9 @@ weight 400 while keeping CSS `font-style: normal`. This lets display labels
 use italic Latin glyphs without slanting or changing the weight of Chinese
 fallback glyphs. The alias does not modify or rename the font binaries.
 
-The stylesheet is included on homepage lists and the About page (slug `about`)
-when the theme setting `homeLatinFont` is `playfair-display`. The About page
-also inherits the interface font for its introduction. Other pages keep their
-existing fonts.
+The stylesheet is included on all pages when the theme setting `homeLatinFont`
+is `playfair-display`. Shared header and footer branding uses the italic face
+on every route. Homepage lists and the About page (slug `about`) additionally
+use Playfair Display for their Latin text; the About introduction inherits
+this pairing. Article bodies and other page content keep their existing fonts.
+The browser loads only the font faces used by the current page.
