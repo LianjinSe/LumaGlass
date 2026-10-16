@@ -1,0 +1,756 @@
+{
+  "family": "LumaGlass Serif",
+  "source": "Adobe Source Han Serif CN VF, 2.003",
+  "source_sha256": "808cb3203bb9cdd6b166a8a656a0c7608a7dc2a31c41c2cd0374550cae445471",
+  "characters": 30930,
+  "weight_range": [
+    250.0,
+    900.0
+  ],
+  "chunks": [
+    {
+      "file": "u00002-42ecae594276.woff2",
+      "characters": 66,
+      "unicode_range": "U+401,U+410-44F,U+451",
+      "bytes": 13644
+    },
+    {
+      "file": "u0000f-73aed1ffc351.woff2",
+      "characters": 92,
+      "unicode_range": "U+1E3E-1E3F,U+1EA0-1EF9",
+      "bytes": 9448
+    },
+    {
+      "file": "u00010-caf84e221ec5.woff2",
+      "characters": 65,
+      "unicode_range": "U+2100,U+2103,U+2105,U+2109-210A,U+210F,U+2113,U+2116,U+2121-2122,U+2126-2127,U+212B,U+212E,U+2135,U+213B,U+2160-216B,U+2170-217B,U+2190-2199,U+21B8-21B9,U+21C4-21C6,U+21CB-21CC,U+21D0,U+21D2,U+21D4,U+21E6-21E9,U+21F5",
+      "bytes": 10536
+    },
+    {
+      "file": "u00011-f3ac2e90bf5d.woff2",
+      "characters": 102,
+      "unicode_range": "U+2200,U+2202-2203,U+2205-220B,U+220F,U+2211-2213,U+2215,U+221A,U+221D-2220,U+2223,U+2225-222E,U+2234-2237,U+223D,U+2243,U+2245,U+2248,U+224C,U+2252,U+2260-2262,U+2264-2267,U+226A-226B,U+226E-226F,U+2272-2273,U+2276-2277,U+2282-2287,U+228A-228B,U+2295-2299,U+22A0,U+22A5,U+22BF,U+22DA-22DB,U+22EF,U+2305-2307,U+2312,U+2318,U+2329-232A,U+23B0-23B1,U+23BE-23CC,U+23CE,U+23DA-23DB",
+      "bytes": 9560
+    },
+    {
+      "file": "u00012-c34ffc05f2bd.woff2",
+      "characters": 361,
+      "unicode_range": "U+2423,U+2460-25AB,U+25B1-25B3,U+25B6-25B7,U+25BC-25BD,U+25C0-25C1,U+25C6-25CC,U+25CE-25D3,U+25E2-25E6,U+25EF",
+      "bytes": 25396
+    },
+    {
+      "file": "u00013-8d9a8b81a3c6.woff2",
+      "characters": 88,
+      "unicode_range": "U+2600-2603,U+2605-2606,U+2609,U+260E-260F,U+2616-2617,U+261C-261F,U+262F,U+2640-2642,U+2660-266F,U+2672-267D,U+26A0,U+26BD-26BE,U+2702,U+2713,U+271A,U+273D,U+273F-2740,U+2756,U+2776-2793,U+27A1",
+      "bytes": 14824
+    },
+    {
+      "file": "u00014-9df4f9674635.woff2",
+      "characters": 5,
+      "unicode_range": "U+2934-2935,U+29BF,U+29FA-29FB",
+      "bytes": 2412
+    },
+    {
+      "file": "u00015-9eb738fa81a1.woff2",
+      "characters": 5,
+      "unicode_range": "U+2B05-2B07,U+2B1A,U+2B95",
+      "bytes": 1988
+    },
+    {
+      "file": "u00017-5aa2bf6c9a54.woff2",
+      "characters": 343,
+      "unicode_range": "U+2E3A-2E3B,U+2E80-2E99,U+2E9B-2EF3,U+2F00-2FD5,U+2FF0-2FFB",
+      "bytes": 74024
+    },
+    {
+      "file": "u00018-ed1f9f0bd2ae.woff2",
+      "characters": 421,
+      "unicode_range": "U+3041-3096,U+3099-30FF,U+3105-312F,U+3131-3163,U+3165-318E,U+3190-31BB,U+31C0-31E3,U+31F0-31FF",
+      "bytes": 177824
+    },
+    {
+      "file": "u00019-f77fd571dcc7.woff2",
+      "characters": 510,
+      "unicode_range": "U+3200-321E,U+3220-332B,U+332D-33FF",
+      "bytes": 122740
+    },
+    {
+      "file": "u0001a-99e9961f8fb6.woff2",
+      "characters": 512,
+      "unicode_range": "U+3400-35FF",
+      "bytes": 189132
+    },
+    {
+      "file": "u0001b-323e8fb77ee5.woff2",
+      "characters": 512,
+      "unicode_range": "U+3600-37FF",
+      "bytes": 201220
+    },
+    {
+      "file": "u0001c-44f67a2042b3.woff2",
+      "characters": 512,
+      "unicode_range": "U+3800-39FF",
+      "bytes": 199432
+    },
+    {
+      "file": "u0001d-58fa58e45d0f.woff2",
+      "characters": 512,
+      "unicode_range": "U+3A00-3BFF",
+      "bytes": 211492
+    },
+    {
+      "file": "u0001e-b18248607b28.woff2",
+      "characters": 512,
+      "unicode_range": "U+3C00-3DFF",
+      "bytes": 238124
+    },
+    {
+      "file": "u0001f-d42c4d5e3de4.woff2",
+      "characters": 512,
+      "unicode_range": "U+3E00-3FFF",
+      "bytes": 205456
+    },
+    {
+      "file": "u00020-d807453c1ae4.woff2",
+      "characters": 512,
+      "unicode_range": "U+4000-41FF",
+      "bytes": 195332
+    },
+    {
+      "file": "u00021-dca0cb0ed711.woff2",
+      "characters": 512,
+      "unicode_range": "U+4200-43FF",
+      "bytes": 225940
+    },
+    {
+      "file": "u00022-3a886749973f.woff2",
+      "characters": 512,
+      "unicode_range": "U+4400-45FF",
+      "bytes": 218752
+    },
+    {
+      "file": "u00023-3e931086e75a.woff2",
+      "characters": 512,
+      "unicode_range": "U+4600-47FF",
+      "bytes": 213584
+    },
+    {
+      "file": "u00024-a4070cb33b6e.woff2",
+      "characters": 512,
+      "unicode_range": "U+4800-49FF",
+      "bytes": 218004
+    },
+    {
+      "file": "u00025-9d8ebf9f36bf.woff2",
+      "characters": 512,
+      "unicode_range": "U+4A00-4BFF",
+      "bytes": 227676
+    },
+    {
+      "file": "u00026-40e10b1b9b39.woff2",
+      "characters": 448,
+      "unicode_range": "U+4C00-4DBF",
+      "bytes": 225428
+    },
+    {
+      "file": "u00027-68e1a9bd9040.woff2",
+      "characters": 465,
+      "unicode_range": "U+4E01-4E09,U+4E0C,U+4E0F-4E12,U+4E14-4E15,U+4E17-4E23,U+4E25-4E29,U+4E2B-4E2C,U+4E2E-4E39,U+4E3C-4E48,U+4E4A-4E5E,U+4E61-4E85,U+4E87-4E8A,U+4E8C-4E8D,U+4E8F-4E91,U+4E93-4E9A,U+4E9C-4EA3,U+4EA5-4EAA,U+4EAC-4EB9,U+4EBB-4EC4,U+4EC6-4ECA,U+4ECC,U+4ECF-4ED2,U+4ED4-4ED5,U+4ED7-4EE2,U+4EE4,U+4EE6-4EEB,U+4EED-4EF5,U+4EF7-4F17,U+4F19,U+4F1B-4F29,U+4F2B-4F4C,U+4F4E-4F52,U+4F54-4F5B,U+4F5D-4F5F,U+4F61-4F7E,U+4F80-4F8A,U+4F8C-4F9C,U+4F9E-4FA6,U+4FA8-4FDC,U+4FDE-4FE0,U+4FE2-4FED,U+4FEF-4FFF",
+      "bytes": 121196
+    },
+    {
+      "file": "u00028-7c6b7802516d.woff2",
+      "characters": 495,
+      "unicode_range": "U+5000-503B,U+503D-504E,U+5050-5147,U+514A,U+514C,U+514E-5164,U+5166-5167,U+5169-516B,U+516D-5170,U+5172,U+5174-5176,U+5178-5184,U+5186-5198,U+519A-51B2,U+51B4-51CE,U+51D0-51F9,U+51FB-51FF",
+      "bytes": 189800
+    },
+    {
+      "file": "u00029-3d06d7a9e9b9.woff2",
+      "characters": 472,
+      "unicode_range": "U+5200-5205,U+5208-5216,U+5218,U+521A-522A,U+522C-522F,U+5231-5235,U+5237-523A,U+523C-524C,U+524E-526E,U+5270-529E,U+52A2-52A7,U+52A9-5304,U+5306-5338,U+533B-533E,U+5340-5354,U+5356-5359,U+535B-5360,U+5362-5372,U+5374-5385,U+5387-539E,U+53A0-53BA,U+53BC-53C8,U+53CC,U+53CE-53D0,U+53D2-53D5,U+53D9-53E2,U+53E4-53E9,U+53EB-53EE,U+53F1,U+53F4-53F6,U+53F8-53FF",
+      "bytes": 161352
+    },
+    {
+      "file": "u0002a-8d71888ca36c.woff2",
+      "characters": 499,
+      "unicode_range": "U+5400-5407,U+5409-540B,U+540F-5410,U+5412-5425,U+5427-542B,U+542D-542E,U+5430-5457,U+5459-547B,U+547D-548B,U+548D-54CC,U+54CE-559B,U+559D-55FF",
+      "bytes": 160160
+    },
+    {
+      "file": "u0002b-70f2aedcf0b2.woff2",
+      "characters": 500,
+      "unicode_range": "U+5600-5667,U+5669-56DD,U+56DF-56FD,U+56FF-5705,U+5707-5727,U+5729-572F,U+5731-573F,U+5741-5746,U+5748-574F,U+5751-57CD,U+57CF-57DE,U+57E0-57F9,U+57FB-57FF",
+      "bytes": 195936
+    },
+    {
+      "file": "u0002c-23a6f7569e1d.woff2",
+      "characters": 495,
+      "unicode_range": "U+5800-586A,U+586C-589D,U+589F-5903,U+5905-5906,U+5908-590C,U+590E-5915,U+5917-5919,U+591B-5926,U+5928,U+592A-5930,U+5932-5933,U+5935-5938,U+593A-5946,U+5948-5956,U+5958-597C,U+597E-5981,U+5983-59CA,U+59CC-59FF",
+      "bytes": 191644
+    },
+    {
+      "file": "u0002d-9989d61a8dad.woff2",
+      "characters": 497,
+      "unicode_range": "U+5A00-5B4F,U+5B51-5B56,U+5B59-5B65,U+5B67-5B88,U+5B8A,U+5B8D-5B97,U+5B99,U+5B9B-5B9D,U+5B9F-5BA0,U+5BA3-5BB8,U+5BBA-5BF8,U+5BFA-5BFB,U+5BFD-5BFF",
+      "bytes": 216564
+    },
+    {
+      "file": "u0002e-a1a38c2c314a.woff2",
+      "characters": 502,
+      "unicode_range": "U+5C00,U+5C02-5C05,U+5C07-5C09,U+5C0B-5C0E,U+5C10,U+5C12-5C3F,U+5C41-5C54,U+5C56-5C5D,U+5C5F-5DF0,U+5DF3-5DFF",
+      "bytes": 191684
+    },
+    {
+      "file": "u0002f-43cbd0eced58.woff2",
+      "characters": 487,
+      "unicode_range": "U+5E00-5E01,U+5E04-5E25,U+5E27-5E37,U+5E39-5E73,U+5E75,U+5E77-5E92,U+5E96-5EA5,U+5EA7-5EF9,U+5EFB-5EFF,U+5F01-5F0E,U+5F10-5F1F,U+5F21-5F39,U+5F3B-5F51,U+5F54,U+5F56-5F70,U+5F72-5F7B,U+5F7D-5F83,U+5F86-5F96,U+5F98-5FA9,U+5FAB-5FC4,U+5FC6-5FFF",
+      "bytes": 179204
+    },
+    {
+      "file": "u00030-c9b7654e40fd.woff2",
+      "characters": 502,
+      "unicode_range": "U+6000,U+6002-601C,U+601E-6024,U+6026,U+6028-606E,U+6070-60AB,U+60AD-60C4,U+60C6-60F2,U+60F4-611E,U+6120-6161,U+6163-61FF",
+      "bytes": 203788
+    },
+    {
+      "file": "u00031-a3cbf074b34d.woff2",
+      "characters": 489,
+      "unicode_range": "U+6200-6215,U+6217-623F,U+6241-624A,U+624C-6252,U+6254-627D,U+6280-6289,U+628B-62A3,U+62A5-62DA,U+62DC-62E8,U+62EA-62EB,U+62ED-6300,U+6302-6306,U+6308,U+630A-6361,U+6363-636D,U+636F-6391,U+6393-63A4,U+63A6,U+63A9-63CE,U+63D1,U+63D3-63FF",
+      "bytes": 166488
+    },
+    {
+      "file": "u00032-648391952f96.woff2",
+      "characters": 493,
+      "unicode_range": "U+6400-641B,U+641D-642C,U+642E-652E,U+6530-6535,U+6537-6538,U+653A-653D,U+653F-6544,U+6546-6547,U+6549-6562,U+6564-656F,U+6571-6573,U+6575-6586,U+6588-65AC,U+65AE-65AF,U+65B1-65B8,U+65BA-65DF,U+65E1-65E4,U+65E6-65E8,U+65EA-65F5,U+65F7-65FF",
+      "bytes": 233348
+    },
+    {
+      "file": "u00033-f68564c0ae01.woff2",
+      "characters": 487,
+      "unicode_range": "U+6600-660D,U+660F-662E,U+6630-6634,U+6636-663D,U+663F-666D,U+6670-6681,U+6683-66F3,U+66F5-66FF,U+6701-6707,U+670A,U+670C,U+670E-671E,U+6720-6729,U+672B,U+672D-6739,U+673B-674F,U+6751-6760,U+6762-6764,U+6766-677E,U+6780-6783,U+6785-679B,U+679D-67D2,U+67D4-67E4,U+67E6-67FF",
+      "bytes": 158184
+    },
+    {
+      "file": "u00034-142556531669.woff2",
+      "characters": 504,
+      "unicode_range": "U+6800-6806,U+6808-680E,U+6810-6836,U+6839-6847,U+6849-684B,U+684D-6862,U+6864-68BF,U+68C1-69FF",
+      "bytes": 189256
+    },
+    {
+      "file": "u00035-2e86f17f6f74.woff2",
+      "characters": 503,
+      "unicode_range": "U+6A00-6A20,U+6A22-6B20,U+6B23-6B62,U+6B65-6BB4,U+6BB6-6BCC,U+6BCE,U+6BD0-6BD3,U+6BD5-6BFF",
+      "bytes": 249448
+    },
+    {
+      "file": "u00036-da56506100f4.woff2",
+      "characters": 497,
+      "unicode_range": "U+6C00-6C13,U+6C15-6C41,U+6C43-6C98,U+6C9A-6CA0,U+6CA2-6CBE,U+6CC0-6CD4,U+6CD6-6CE7,U+6CE9-6D3A,U+6D3C-6D44,U+6D46-6D4A,U+6D4C-6D4E,U+6D50-6D6D,U+6D6F-6D76,U+6D78-6D87,U+6D89-6DF0,U+6DF2-6DFF",
+      "bytes": 170696
+    },
+    {
+      "file": "u00037-4701b160c88e.woff2",
+      "characters": 505,
+      "unicode_range": "U+6E00-6E04,U+6E06-6E0F,U+6E11-6E20,U+6E22-6E31,U+6E33-6E37,U+6E39-6E8F,U+6E91-6F83,U+6F85-6FFF",
+      "bytes": 236448
+    },
+    {
+      "file": "u00038-3d0e805b25c9.woff2",
+      "characters": 508,
+      "unicode_range": "U+7000-7074,U+7076-70B8,U+70BA-7125,U+7127-7135,U+7137-71FF",
+      "bytes": 234128
+    },
+    {
+      "file": "u00039-2c95cfc5fbb3.woff2",
+      "characters": 505,
+      "unicode_range": "U+7200-7246,U+7249-72B5,U+72B7-72EB,U+72ED-73AE,U+73B1-73BA,U+73BC-73FF",
+      "bytes": 200948
+    },
+    {
+      "file": "u0003a-d9dc2a1d6dbb.woff2",
+      "characters": 503,
+      "unicode_range": "U+7400-7405,U+7407-7482,U+7484-751E,U+7520-7527,U+7529-7530,U+7532,U+7534-753A,U+753C-754B,U+754D-7558,U+755A-75FF",
+      "bytes": 200424
+    },
+    {
+      "file": "u0003b-7bee3088beb1.woff2",
+      "characters": 499,
+      "unicode_range": "U+7600-767A,U+767C-7683,U+7685-76D0,U+76D2-76D5,U+76D7,U+76D9-76ED,U+76EF-76F3,U+76F5-76F7,U+76F9-7708,U+770A,U+770C-771E,U+7720-773F,U+7741-77EC,U+77EE-77FF",
+      "bytes": 201424
+    },
+    {
+      "file": "u0003c-956f24334b33.woff2",
+      "characters": 502,
+      "unicode_range": "U+7800,U+7803-788C,U+788F-78E7,U+78E9-7939,U+793B-793D,U+793F-7980,U+7982-79EF,U+79F1-79FA,U+79FC-79FF",
+      "bytes": 193820
+    },
+    {
+      "file": "u0003d-b83200acb61a.woff2",
+      "characters": 499,
+      "unicode_range": "U+7A00-7A0A,U+7A0C-7A79,U+7A7B-7ACA,U+7ACC-7AD8,U+7ADA-7ADF,U+7AE1-7AEE,U+7AF0-7B2B,U+7B2D-7B48,U+7B4A-7B7D,U+7B7F,U+7B81-7BA0,U+7BA2-7BB0,U+7BB2-7BC6,U+7BC8-7BFF",
+      "bytes": 217000
+    },
+    {
+      "file": "u0003e-ded1021c01e0.woff2",
+      "characters": 506,
+      "unicode_range": "U+7C00-7C7A,U+7C7C-7CBD,U+7CBF-7CC9,U+7CCB-7CFA,U+7CFC-7D21,U+7D23-7D2A,U+7D2C-7DFF",
+      "bytes": 250388
+    },
+    {
+      "file": "u0003f-a7ec7228aabf.woff2",
+      "characters": 497,
+      "unicode_range": "U+7E00-7EAE,U+7EB0-7EBE,U+7EC0-7EC5,U+7EC7-7ED2,U+7ED4-7ED8,U+7EDA-7EDB,U+7EDD-7EDE,U+7EE0-7EE6,U+7EE8-7EEC,U+7EEE-7EF3,U+7EF5-7F12,U+7F14-7F15,U+7F17,U+7F19-7F50,U+7F52-7F6D,U+7F6F-7FFF",
+      "bytes": 262348
+    },
+    {
+      "file": "u00040-02c1b3c803c2.woff2",
+      "characters": 503,
+      "unicode_range": "U+8000-8004,U+8006-804B,U+804D-8053,U+8055-8059,U+805B-80CB,U+80CD-80FC,U+80FE-8110,U+8112-8119,U+811B-81E9,U+81EB-81FF",
+      "bytes": 192892
+    },
+    {
+      "file": "u00041-3ba06113fdb9.woff2",
+      "characters": 504,
+      "unicode_range": "U+8200-8229,U+822B-8271,U+8273-8281,U+8283-82E4,U+82E6-82F0,U+82F2-834F,U+8351-83B6,U+83B8-83DB,U+83DD-83FF",
+      "bytes": 171116
+    },
+    {
+      "file": "u00042-bc85f799440a.woff2",
+      "characters": 510,
+      "unicode_range": "U+8400-84DC,U+84DE-85CE,U+85D0-85FF",
+      "bytes": 226984
+    },
+    {
+      "file": "u00043-116cbf584008.woff2",
+      "characters": 512,
+      "unicode_range": "U+8600-87FF",
+      "bytes": 230708
+    },
+    {
+      "file": "u00044-b995e5c7f711.woff2",
+      "characters": 504,
+      "unicode_range": "U+8800-884B,U+884D-8867,U+8869-88C4,U+88C6-8985,U+8987-89C0,U+89C3-89C7,U+89C9-89D1,U+89D3-89FF",
+      "bytes": 232140
+    },
+    {
+      "file": "u00045-178491f32feb.woff2",
+      "characters": 490,
+      "unicode_range": "U+8A01-8BA0,U+8BA3,U+8BA5-8BA8,U+8BAA-8BAD,U+8BAF,U+8BB1-8BB7,U+8BB9,U+8BBB-8BBD,U+8BC0,U+8BC2-8BC3,U+8BC5,U+8BC7-8BCC,U+8BCE-8BD0,U+8BD2-8BD4,U+8BD6-8BE1,U+8BE3-8BE4,U+8BE6-8BF3,U+8BF5-8BF6,U+8BF8-8BFA,U+8BFC-8BFF",
+      "bytes": 180532
+    },
+    {
+      "file": "u00046-10c1773fcf22.woff2",
+      "characters": 499,
+      "unicode_range": "U+8C00-8C02,U+8C04-8D22,U+8D24,U+8D26-8D27,U+8D29-8D43,U+8D45-8D55,U+8D57-8D6F,U+8D71-8D76,U+8D78-8DA2,U+8DA4-8DDC,U+8DDE,U+8DE0-8DEE,U+8DF0-8DF2,U+8DF4-8DFF",
+      "bytes": 203748
+    },
+    {
+      "file": "u00047-f7870f63dab2.woff2",
+      "characters": 495,
+      "unicode_range": "U+8E00-8F6B,U+8F6D-8F7C,U+8F7E-8F82,U+8F84-8F90,U+8F92,U+8F94-8FB8,U+8FBA-8FC0,U+8FC2-8FC6,U+8FC8-8FCF,U+8FD2-8FD3,U+8FD5-8FD7,U+8FDA,U+8FDC-8FDD,U+8FDF-8FEF,U+8FF1-8FFC,U+8FFE-8FFF",
+      "bytes": 199596
+    },
+    {
+      "file": "u00048-eb1706ce185f.woff2",
+      "characters": 495,
+      "unicode_range": "U+9001,U+9003-9008,U+900A-900E,U+9010-9019,U+901B-901F,U+9021-903A,U+903C-9046,U+9048-9074,U+9076-907E,U+9080-90AD,U+90AF-90E7,U+90E9-90FC,U+90FE-914C,U+914E-91C6,U+91C8-91CB,U+91CE-91FF",
+      "bytes": 207912
+    },
+    {
+      "file": "u00049-705e73478e40.woff2",
+      "characters": 512,
+      "unicode_range": "U+9200-93FF",
+      "bytes": 211608
+    },
+    {
+      "file": "u0004a-6ba7f9e0019e.woff2",
+      "characters": 504,
+      "unicode_range": "U+9400-949E,U+94A0-94A8,U+94AA-94AD,U+94AF-94FD,U+94FF-952D,U+952F-957E,U+9580-95EC,U+95EE-95F3,U+95F5-95FF",
+      "bytes": 225964
+    },
+    {
+      "file": "u0004b-e28383379282.woff2",
+      "characters": 498,
+      "unicode_range": "U+9600-9604,U+9606-9633,U+9635-9643,U+9645-9663,U+9665-9685,U+9687-968E,U+9691-969B,U+969D-96C5,U+96C7-96F5,U+96F7-96FD,U+96FF,U+9701-9758,U+975A-9761,U+9763-97FF",
+      "bytes": 212204
+    },
+    {
+      "file": "u0004c-dd4679028617.woff2",
+      "characters": 503,
+      "unicode_range": "U+9800-9874,U+9877-9878,U+987A-9883,U+9885-9897,U+9899-989B,U+989E-9987,U+9989-9995,U+9997-99FF",
+      "bytes": 226500
+    },
+    {
+      "file": "u0004d-d256cb214015.woff2",
+      "characters": 510,
+      "unicode_range": "U+9A00-9A8B,U+9A8D-9AD7,U+9AD9-9BFF",
+      "bytes": 254760
+    },
+    {
+      "file": "u0004e-ad02581a1b2e.woff2",
+      "characters": 512,
+      "unicode_range": "U+9C00-9DFF",
+      "bytes": 242704
+    },
+    {
+      "file": "u0004f-32524c9de38d.woff2",
+      "characters": 511,
+      "unicode_range": "U+9E00-9ED7,U+9ED9-9FFF",
+      "bytes": 275060
+    },
+    {
+      "file": "u0007c-fc2ebb7be9f9.woff2",
+      "characters": 102,
+      "unicode_range": "U+F901-F903,U+F905-F906,U+F90A-F90C,U+F915-F91A,U+F91D-F91F,U+F92C-F92D,U+F92F,U+F931-F935,U+F937,U+F939-F93A,U+F943,U+F947-F948,U+F94A,U+F94E,U+F952-F953,U+F95E,U+F962-F968,U+F96E,U+F972-F974,U+F976,U+F979-F97B,U+F97E-F980,U+F984-F985,U+F98A-F98C,U+F98E,U+F991,U+F993,U+F995,U+F998,U+F99B-F99C,U+F99E-F99F,U+F9A5,U+F9AE,U+F9B5,U+F9B7-F9B8,U+F9BA-F9BB,U+F9BD-F9BE,U+F9C0,U+F9C5-F9C6,U+F9D0,U+F9D8-F9DA,U+F9DC-F9E4,U+F9E7,U+F9E9,U+F9F1,U+F9F4-F9F5,U+F9FA-F9FB,U+F9FD,U+F9FF",
+      "bytes": 43152
+    },
+    {
+      "file": "u0007d-c7a277ea2fbe.woff2",
+      "characters": 40,
+      "unicode_range": "U+FA02,U+FA05-FA08,U+FA0A,U+FA0C-FA0F,U+FA11,U+FA13-FA14,U+FA18,U+FA1F-FA21,U+FA23-FA24,U+FA27-FA29,U+FA2F,U+FA33-FA35,U+FA37-FA38,U+FA3A,U+FA47,U+FA49,U+FA4B,U+FA5C-FA5E,U+FB00-FB04",
+      "bytes": 18064
+    },
+    {
+      "file": "u0007f-4afe950e60c8.woff2",
+      "characters": 68,
+      "unicode_range": "U+FE10-FE19,U+FE30-FE52,U+FE54-FE66,U+FE68-FE6B",
+      "bytes": 7156
+    },
+    {
+      "file": "u000f8-04962750d350.woff2",
+      "characters": 167,
+      "unicode_range": "U+1F100-1F10C,U+1F110-1F16C,U+1F170-1F1AC",
+      "bytes": 26216
+    },
+    {
+      "file": "u000f9-ff3d1b620b16.woff2",
+      "characters": 58,
+      "unicode_range": "U+1F200-1F202,U+1F210-1F23B,U+1F240-1F248,U+1F250-1F251",
+      "bytes": 20492
+    },
+    {
+      "file": "u00100-cb7b87f9fd48.woff2",
+      "characters": 4,
+      "unicode_range": "U+20087,U+20089,U+200CC,U+20164",
+      "bytes": 2672
+    },
+    {
+      "file": "u00103-2fa4c2efae9f.woff2",
+      "characters": 2,
+      "unicode_range": "U+20628,U+20676",
+      "bytes": 2344
+    },
+    {
+      "file": "u00106-a1f790b5d8f2.woff2",
+      "characters": 1,
+      "unicode_range": "U+20CD0",
+      "bytes": 2316
+    },
+    {
+      "file": "u00109-58e9cdb25ac6.woff2",
+      "characters": 1,
+      "unicode_range": "U+2139A",
+      "bytes": 2368
+    },
+    {
+      "file": "u0010a-a9b2b325b42a.woff2",
+      "characters": 2,
+      "unicode_range": "U+21413,U+215D7",
+      "bytes": 2748
+    },
+    {
+      "file": "u00114-4820648acb88.woff2",
+      "characters": 1,
+      "unicode_range": "U+2298F",
+      "bytes": 2240
+    },
+    {
+      "file": "u0011a-ad7cb254eccf.woff2",
+      "characters": 1,
+      "unicode_range": "U+235CB",
+      "bytes": 2512
+    },
+    {
+      "file": "u0011e-7a59a5b6f1f2.woff2",
+      "characters": 2,
+      "unicode_range": "U+23C97-23C98",
+      "bytes": 2700
+    },
+    {
+      "file": "u0011f-837348ba483a.woff2",
+      "characters": 1,
+      "unicode_range": "U+23E23",
+      "bytes": 2420
+    },
+    {
+      "file": "u00120-cad4127170ef.woff2",
+      "characters": 1,
+      "unicode_range": "U+241FE",
+      "bytes": 2372
+    },
+    {
+      "file": "u00121-323d0d01048a.woff2",
+      "characters": 1,
+      "unicode_range": "U+2420E",
+      "bytes": 2336
+    },
+    {
+      "file": "u00124-0b2e494a6cfc.woff2",
+      "characters": 2,
+      "unicode_range": "U+248E9,U+249DB",
+      "bytes": 2636
+    },
+    {
+      "file": "u00125-c1e72c0fd350.woff2",
+      "characters": 3,
+      "unicode_range": "U+24A01,U+24A7D,U+24AC9",
+      "bytes": 3820
+    },
+    {
+      "file": "u0012a-36ee5afcc8b8.woff2",
+      "characters": 3,
+      "unicode_range": "U+25532,U+25562,U+255A8",
+      "bytes": 3376
+    },
+    {
+      "file": "u0012f-38a37bb4d0c4.woff2",
+      "characters": 1,
+      "unicode_range": "U+25ED7",
+      "bytes": 2424
+    },
+    {
+      "file": "u00131-a18831b13cdc.woff2",
+      "characters": 1,
+      "unicode_range": "U+26221",
+      "bytes": 2712
+    },
+    {
+      "file": "u00132-398b32653999.woff2",
+      "characters": 1,
+      "unicode_range": "U+2648D",
+      "bytes": 2604
+    },
+    {
+      "file": "u00133-832f5d8fa120.woff2",
+      "characters": 2,
+      "unicode_range": "U+26676,U+2677C",
+      "bytes": 2872
+    },
+    {
+      "file": "u00134-fc6fa49842f0.woff2",
+      "characters": 1,
+      "unicode_range": "U+26951",
+      "bytes": 2132
+    },
+    {
+      "file": "u00135-a156bba4ca4a.woff2",
+      "characters": 1,
+      "unicode_range": "U+26B5C",
+      "bytes": 2172
+    },
+    {
+      "file": "u00136-66c2f02dde58.woff2",
+      "characters": 1,
+      "unicode_range": "U+26C21",
+      "bytes": 2388
+    },
+    {
+      "file": "u0013c-739c515b4a37.woff2",
+      "characters": 1,
+      "unicode_range": "U+278B2",
+      "bytes": 2304
+    },
+    {
+      "file": "u0013f-88c1df4b0d3e.woff2",
+      "characters": 2,
+      "unicode_range": "U+27EAF,U+27FF9",
+      "bytes": 2952
+    },
+    {
+      "file": "u00142-23d94bd9b517.woff2",
+      "characters": 1,
+      "unicode_range": "U+28408",
+      "bytes": 2448
+    },
+    {
+      "file": "u00143-c5eacf967a1d.woff2",
+      "characters": 3,
+      "unicode_range": "U+28678,U+28695,U+287E0",
+      "bytes": 3304
+    },
+    {
+      "file": "u00145-30df5aa347e1.woff2",
+      "characters": 1,
+      "unicode_range": "U+28B49",
+      "bytes": 2704
+    },
+    {
+      "file": "u00146-bf46c2750c65.woff2",
+      "characters": 4,
+      "unicode_range": "U+28C47,U+28C4F,U+28C51,U+28C54",
+      "bytes": 4236
+    },
+    {
+      "file": "u00147-7871e314312f.woff2",
+      "characters": 2,
+      "unicode_range": "U+28E0F,U+28E99",
+      "bytes": 2700
+    },
+    {
+      "file": "u0014b-9ba36a0a27be.woff2",
+      "characters": 1,
+      "unicode_range": "U+2967F",
+      "bytes": 2164
+    },
+    {
+      "file": "u0014c-f3d84ef2b3cd.woff2",
+      "characters": 1,
+      "unicode_range": "U+29810",
+      "bytes": 2252
+    },
+    {
+      "file": "u0014f-83b13b2e9238.woff2",
+      "characters": 3,
+      "unicode_range": "U+29F7E,U+29F83,U+29F8C",
+      "bytes": 3900
+    },
+    {
+      "file": "u00153-de17e5068919.woff2",
+      "characters": 1,
+      "unicode_range": "U+2A7DD",
+      "bytes": 2324
+    },
+    {
+      "file": "u00154-ad357bf9069b.woff2",
+      "characters": 2,
+      "unicode_range": "U+2A8FB,U+2A917",
+      "bytes": 3112
+    },
+    {
+      "file": "u00155-f2795468d0fc.woff2",
+      "characters": 3,
+      "unicode_range": "U+2AA30,U+2AA36,U+2AA58",
+      "bytes": 3556
+    },
+    {
+      "file": "u00157-1e81e51786ab.woff2",
+      "characters": 1,
+      "unicode_range": "U+2AFA2",
+      "bytes": 2196
+    },
+    {
+      "file": "u00158-9c4e03c4df07.woff2",
+      "characters": 5,
+      "unicode_range": "U+2B127-2B128,U+2B137-2B138,U+2B1ED",
+      "bytes": 5200
+    },
+    {
+      "file": "u00159-43685b7922f0.woff2",
+      "characters": 5,
+      "unicode_range": "U+2B300,U+2B363,U+2B36F,U+2B372,U+2B37D",
+      "bytes": 4420
+    },
+    {
+      "file": "u0015a-296d9581d72b.woff2",
+      "characters": 16,
+      "unicode_range": "U+2B404,U+2B410,U+2B413,U+2B461,U+2B4E7,U+2B4EF,U+2B4F6,U+2B4F9,U+2B50D-2B50E,U+2B536,U+2B5AE-2B5AF,U+2B5B3,U+2B5E7,U+2B5F4",
+      "bytes": 9576
+    },
+    {
+      "file": "u0015b-5daac770b214.woff2",
+      "characters": 16,
+      "unicode_range": "U+2B61C-2B61D,U+2B626-2B628,U+2B62A,U+2B62C,U+2B695-2B696,U+2B6AD,U+2B6ED,U+2B7A9,U+2B7C5,U+2B7E6,U+2B7F9,U+2B7FC",
+      "bytes": 11228
+    },
+    {
+      "file": "u0015c-7bdfdaf5dce1.woff2",
+      "characters": 4,
+      "unicode_range": "U+2B806,U+2B80A,U+2B81C,U+2B8B8",
+      "bytes": 4148
+    },
+    {
+      "file": "u0015d-1100667c4068.woff2",
+      "characters": 5,
+      "unicode_range": "U+2BAC7,U+2BB5F,U+2BB62,U+2BB7C,U+2BB83",
+      "bytes": 4044
+    },
+    {
+      "file": "u0015e-b0445850a6d6.woff2",
+      "characters": 4,
+      "unicode_range": "U+2BC1B,U+2BD77,U+2BD87,U+2BDF7",
+      "bytes": 3892
+    },
+    {
+      "file": "u0015f-17f3481b415b.woff2",
+      "characters": 1,
+      "unicode_range": "U+2BE29",
+      "bytes": 2360
+    },
+    {
+      "file": "u00160-fa392a0176a8.woff2",
+      "characters": 7,
+      "unicode_range": "U+2C029-2C02A,U+2C0A9,U+2C0CA,U+2C1D5,U+2C1D9,U+2C1F9",
+      "bytes": 4584
+    },
+    {
+      "file": "u00161-e98df1bfd67d.woff2",
+      "characters": 7,
+      "unicode_range": "U+2C27C,U+2C288,U+2C2A4,U+2C317,U+2C35B,U+2C361,U+2C364",
+      "bytes": 5008
+    },
+    {
+      "file": "u00162-e6a7afe7fa75.woff2",
+      "characters": 4,
+      "unicode_range": "U+2C488,U+2C494,U+2C497,U+2C542",
+      "bytes": 3872
+    },
+    {
+      "file": "u00163-c191ab0bae84.woff2",
+      "characters": 16,
+      "unicode_range": "U+2C613,U+2C618,U+2C621,U+2C629,U+2C62B-2C62D,U+2C62F,U+2C642,U+2C64A-2C64B,U+2C72C,U+2C72F,U+2C79F,U+2C7C1,U+2C7FD",
+      "bytes": 10816
+    },
+    {
+      "file": "u00164-e7c13352ce4c.woff2",
+      "characters": 7,
+      "unicode_range": "U+2C8D9,U+2C8DE,U+2C8E1,U+2C8F3,U+2C907,U+2C90A,U+2C91D",
+      "bytes": 4920
+    },
+    {
+      "file": "u00165-46cea17d6d24.woff2",
+      "characters": 29,
+      "unicode_range": "U+2CA02,U+2CA0E,U+2CA7D,U+2CAA9,U+2CB29,U+2CB2D-2CB2E,U+2CB31,U+2CB38-2CB39,U+2CB3B,U+2CB3F,U+2CB41,U+2CB4A,U+2CB4E,U+2CB5A-2CB5B,U+2CB64,U+2CB69,U+2CB6C,U+2CB6F,U+2CB73,U+2CB76,U+2CB78,U+2CB7C,U+2CBB1,U+2CBBF-2CBC0,U+2CBCE",
+      "bytes": 16264
+    },
+    {
+      "file": "u00166-9c2153967d86.woff2",
+      "characters": 19,
+      "unicode_range": "U+2CC56,U+2CC5F,U+2CCF5-2CCF6,U+2CCFD,U+2CCFF,U+2CD02-2CD03,U+2CD0A,U+2CD8B,U+2CD8D,U+2CD8F-2CD90,U+2CD9F-2CDA0,U+2CDA8,U+2CDAD-2CDAE,U+2CDD5",
+      "bytes": 11852
+    },
+    {
+      "file": "u00167-e383e28c7b9e.woff2",
+      "characters": 8,
+      "unicode_range": "U+2CE18,U+2CE1A,U+2CE23,U+2CE26,U+2CE2A,U+2CE7C,U+2CE88,U+2CE93",
+      "bytes": 7472
+    },
+    {
+      "file": "u0016a-8cc07da56b3f.woff2",
+      "characters": 1,
+      "unicode_range": "U+2D544",
+      "bytes": 1952
+    },
+    {
+      "file": "u0017c-86f39928d370.woff2",
+      "characters": 4,
+      "unicode_range": "U+2F878,U+2F884,U+2F8B6,U+2F920",
+      "bytes": 4180
+    },
+    {
+      "file": "common-d389e167b558.woff2",
+      "characters": 1155,
+      "unicode_range": "U+20-7E,U+A0-103,U+110-113,U+11A-11B,U+128-12B,U+143-144,U+147-148,U+14C-14F,U+152-153,U+168-16D,U+192,U+1A0-1A1,U+1AF-1B0,U+1CD-1DC,U+1F8-1F9,U+251,U+261,U+2BB,U+2C7,U+2C9-2CB,U+2D9,U+2EA-2EB,U+300-301,U+304,U+307,U+30C,U+391-3A1,U+3A3-3A9,U+3B1-3C9,U+2002-2003,U+2010-2016,U+2018-201A,U+201C-201E,U+2020-2022,U+2025-2027,U+2030,U+2032-2033,U+2035,U+2039-203C,U+2042,U+2047-2049,U+2051,U+2074,U+20A9,U+20AB-20AC,U+20DD-20DE,U+3000-303F,U+4E00,U+4E0A-4E0B,U+4E0D-4E0E,U+4E13,U+4E16,U+4E24,U+4E2A,U+4E2D,U+4E3A-4E3B,U+4E49,U+4E5F-4E60,U+4E86,U+4E8B,U+4E8E,U+4E92,U+4E9B,U+4EA4,U+4EAB,U+4EBA,U+4EC5,U+4ECB,U+4ECD-4ECE,U+4ED3,U+4ED6,U+4EE3,U+4EE5,U+4EEC,U+4EF6,U+4F18,U+4F1A,U+4F2A,U+4F4D,U+4F53,U+4F5C,U+4F60,U+4F7F,U+4F8B,U+4F9D,U+4FA7,U+4FDD,U+4FE1,U+4FEE,U+503C,U+504F,U+5148-5149,U+514B,U+514D,U+5165,U+5168,U+516C,U+5171,U+5173,U+5177,U+5185,U+5199,U+51B3,U+51CF,U+51FA,U+5206-5207,U+5217,U+5219,U+522B,U+5230,U+5236,U+523B,U+524D,U+526F,U+529F-52A1,U+52A8,U+5305,U+5339-533A,U+533F,U+5355,U+535A,U+5361,U+5373,U+5386,U+539F,U+53BB,U+53C9-53CB,U+53CD,U+53D1,U+53D6-53D8,U+53E3,U+53EA,U+53EF-53F0,U+53F2-53F3,U+53F7,U+5408,U+540C-540E,U+5411,U+5426,U+542C,U+542F,U+5458,U+547C,U+548C,U+54CD,U+559C,U+5668,U+56DE,U+56FE,U+5706,U+5728,U+5730,U+5740,U+5747,U+5750,U+57CE,U+57DF,U+57FA,U+586B,U+589E,U+5904,U+5907,U+590D,U+5916,U+591A,U+5927,U+5929,U+5931,U+5934,U+5939,U+5947,U+5957,U+597D,U+5982,U+59CB,U+5B50,U+5B57-5B58,U+5B66,U+5B89,U+5B8B-5B8C,U+5B98,U+5B9A,U+5B9E,U+5BA1-5BA2,U+5BB9,U+5BF9,U+5BFC,U+5C01,U+5C06,U+5C0A,U+5C0F,U+5C11,U+5C40,U+5C55,U+5C5E,U+5DF1-5DF2,U+5E02-5E03,U+5E26,U+5E38,U+5E74,U+5E76,U+5E93-5E95,U+5EA6,U+5EFA,U+5F00,U+5F0F,U+5F20,U+5F3A,U+5F52-5F53,U+5F55,U+5F71,U+5F7C,U+5F84-5F85,U+5F97,U+5FAA,U+5FC5,U+6001,U+601D,U+6025,U+6027,U+606F,U+60AC,U+60C5,U+60F3,U+611F,U+6162,U+6216,U+6240,U+624B,U+6253,U+627E-627F,U+628A,U+62A4,U+62DB,U+62E9,U+62EC,U+6301,U+6307,U+6309,U+6362,U+636E,U+6392,U+63A5,U+63A7-63A8,U+63CF-63D0,U+63D2,U+641C,U+642D,U+652F,U+6536,U+6539,U+653E,U+6545,U+6548,U+6563,U+6570,U+6574,U+6587,U+65AD,U+65B0,U+65B9,U+65E0,U+65E5,U+65E9,U+65F6,U+660E,U+662F,U+6635,U+663E,U+666E-666F,U+6682,U+66F4,U+6700,U+6708-6709,U+670B,U+670D,U+671F,U+672A,U+672C,U+673A,U+6750,U+6761,U+6765,U+677F,U+6784,U+679C,U+67D3,U+67E5,U+6807,U+680F,U+6837-6838,U+6848,U+684C,U+6863,U+68C0,U+6A21,U+6B21-6B22,U+6B63-6B64,U+6BB5,U+6BCD,U+6BCF,U+6BD4,U+6C14,U+6C42,U+6C99,U+6CA1,U+6CBF,U+6CD5,U+6CE8,U+6D3B,U+6D45,U+6D4B,U+6D4F,U+6D6E,U+6D77,U+6D88,U+6DF1,U+6E05,U+6E10,U+6E21,U+6E32,U+6E38,U+6E90,U+6F84,U+7075,U+70B9,U+7126,U+7136,U+7247-7248,U+72B6,U+72EC,U+73AF-73B0,U+73BB,U+7406,U+7483,U+751F,U+7528,U+7531,U+7533,U+753B,U+754C,U+7559,U+767B,U+7684,U+76D1,U+76D6,U+76D8,U+76EE,U+76F4,U+76F8,U+7709,U+770B,U+771F,U+7740,U+77ED,U+7801-7802,U+788D-788E,U+78E8,U+793A,U+793E,U+7981,U+79F0,U+79FB,U+7A0B,U+7A7A,U+7ACB,U+7AD9,U+7AE0,U+7AEF,U+7B2C,U+7B49,U+7B7E,U+7B80,U+7BA1,U+7BB1,U+7BC7,U+7C7B,U+7CBE,U+7CCA,U+7CFB,U+7D22,U+7D2B,U+7EAF,U+7EBF,U+7EC6,U+7ED3,U+7ED9,U+7EDC,U+7EDF,U+7EE7,U+7EED,U+7EF4,U+7F13,U+7F16,U+7F18,U+7F51,U+7F6E,U+8005,U+804C,U+8054,U+805A,U+80CC,U+80FD,U+8111,U+811A,U+81EA,U+822A,U+8272,U+8282,U+82E5,U+82F1,U+8350,U+83B7,U+83DC,U+84DD,U+85CF,U+884C,U+8868,U+88C5,U+8986,U+89C1-89C2,U+89C8,U+89D2,U+8A00,U+8BA1-8BA2,U+8BA4,U+8BA9,U+8BAE,U+8BB0,U+8BB8,U+8BBA,U+8BBE-8BBF,U+8BC1,U+8BC4,U+8BC6,U+8BCD,U+8BD1,U+8BD5,U+8BE2,U+8BE5,U+8BF4,U+8BF7,U+8BFB,U+8C03,U+8D23,U+8D25,U+8D28,U+8D44,U+8D56,U+8D70,U+8D77,U+8DA3,U+8DDD,U+8DDF,U+8DEF,U+8DF3,U+8F6C,U+8F7D,U+8F83,U+8F91,U+8F93,U+8FB9,U+8FC1,U+8FC7,U+8FD0-8FD1,U+8FD4,U+8FD8-8FD9,U+8FDB,U+8FDE,U+8FF0,U+8FFD,U+9000,U+9002,U+9009,U+900F,U+901A,U+9020,U+903B,U+9047,U+9075,U+907F,U+90AE,U+90E8,U+90FD,U+914D,U+91C7,U+91CC-91CD,U+949F,U+94A9,U+94AE,U+94FE,U+952E,U+957F,U+95ED,U+95F4,U+9605,U+9634,U+9644,U+9664,U+9686,U+968F-9690,U+969C,U+96C6,U+96F6,U+96FE,U+9700,U+9759,U+9762,U+9875-9876,U+9879,U+9884,U+9898,U+989C-989D,U+9988,U+9996,U+9A8C,U+9AD8,U+9ED8,U+FF01-FF9F,U+FFA1-FFBE,U+FFC2-FFC7,U+FFCA-FFCF,U+FFD2-FFD7,U+FFDA-FFDC,U+FFE0-FFE6,U+FFE8-FFEE",
+      "bytes": 298128
+    }
+  ]
+}

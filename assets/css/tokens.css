@@ -1,5 +1,7 @@
 :root {
   color-scheme: light;
+  --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-interface: var(--font-system);
   --content-max: 1180px;
   --radius-sm: 14px;
   --radius-md: 22px;

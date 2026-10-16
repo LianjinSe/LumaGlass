@@ -13,6 +13,7 @@ function themeConfig($form)
         text('heroPanelOneValue', '保持好奇', '首页信息卡 1 内容', '首页 Hero 右侧第一张卡片内容。'),
         text('weatherLocation', 'Shanghai', '天气地点', '首页天气卡使用的地点，建议填写城市英文名，如 Shanghai、Beijing、Tokyo。'),
         radio('colorMode', ['auto' => '跟随系统', 'light' => '浅色', 'dark' => '深色'], 'auto', '默认颜色模式', '仍可在前台手动切换。'),
+        radio('interfaceFont', ['system' => '系统字体', 'source-han-serif' => '思源宋体'], 'system', '界面字体', '用于导航、首页标题、文章标题、卡片和按钮；文章正文与代码字体保持原样。'),
         text('favicon', '', '浏览器图标 URL', '用于浏览器标签页和收藏夹图标，支持 png、ico、svg。'),
         text('logoLight', '', '浅色 Logo URL', '可留空，留空则使用文字标识。'),
         text('logoDark', '', '深色 Logo URL', '可留空。'),
@@ -151,6 +152,11 @@ function ag_option_bool($name, $default = false)
 {
     $switches = ag_option('featureSwitch', null);
     return $switches === null ? $default : in_array($name, (array) $switches, true);
+}
+
+function lg_interface_font()
+{
+    return ag_option('interfaceFont', 'system') === 'source-han-serif' ? 'source-han-serif' : 'system';
 }
 
 function ag_asset($path)

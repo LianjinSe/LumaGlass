@@ -1,4 +1,4 @@
-.entry-content { font-size: 1rem; line-height: 1.95; min-width: 0; overflow-wrap: break-word; }
+.entry-content { font-family: var(--font-system); font-size: 1rem; line-height: 1.95; min-width: 0; overflow-wrap: break-word; }
 .entry-content > * { max-width: 100%; }
 .entry-content > :first-child { margin-top: 0; }
 .entry-content > :last-child { margin-bottom: 0; }

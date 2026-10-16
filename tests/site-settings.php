@@ -52,6 +52,12 @@ function xpathFor($html)
 
 $form = new \Typecho\Widget\Helper\Form();
 themeConfig($form);
+check($form->getInput('interfaceFont') !== null, 'Interface font must be editable in theme settings');
+$options->interfaceFont = 'source-han-serif';
+check(lg_interface_font() === 'source-han-serif', 'Configured interface font must be recognized');
+$options->interfaceFont = 'unsupported-font';
+check(lg_interface_font() === 'system', 'Unknown interface fonts must fall back to system fonts');
+$options->interfaceFont = 'system';
 foreach (['beian', 'publicSecurityNumber', 'publicSecurityUrl', 'publicSecurityIcon'] as $name) {
     check($form->getInput($name)->input->getAttribute('value') === '', $name . ' must have an empty default');
 }

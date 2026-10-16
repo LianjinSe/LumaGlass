@@ -1,6 +1,6 @@
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 110px; font-size: 100%; }
-body { margin: 0; color: var(--text); background: var(--bg); font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; font-optical-sizing: auto; }
+body { margin: 0; color: var(--text); background: var(--bg); font-family: var(--font-interface); line-height: 1.65; -webkit-font-smoothing: antialiased; font-optical-sizing: auto; }
 a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; touch-action: manipulation; }
