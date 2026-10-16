@@ -42,6 +42,7 @@
     ::view-transition-old(lg-content),
     ::view-transition-old(lg-footer) { opacity: 1; animation: lg-fade-out 125ms var(--ease) both; }
     ::view-transition-new(lg-content) { animation: lg-content-in 200ms var(--ease) 40ms both; }
+    :root:has(body.is-post)::view-transition-new(lg-content) { animation-name: lg-post-in; animation-duration: 250ms; }
     ::view-transition-new(lg-footer) { animation: lg-fade-in 200ms var(--ease) 40ms both; }
   }
 }
@@ -49,3 +50,4 @@
 @keyframes lg-fade-out { to { opacity: 0; } }
 @keyframes lg-fade-in { from { opacity: 0; } }
 @keyframes lg-content-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes lg-post-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
