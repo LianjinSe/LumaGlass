@@ -51,6 +51,7 @@ html[data-theme="dark"] .has-dark-logo .logo-dark { display: block !important; }
 .brand-text strong { font-size: .92rem; letter-spacing: -.025em; line-height: 1.4; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .brand-text small { font-size: .65rem; color: var(--text-2); letter-spacing: .045em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .site-nav { display: flex; gap: 3px; align-items: center; }
+.nav-pill { display: none; }
 .nav-link { display: flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 20px; border-radius: var(--radius-pill); font-size: .85rem; font-weight: 500; color: var(--text-2); transition: background 160ms ease, color 160ms ease, transform 140ms var(--ease); white-space: nowrap; }
 .nav-link.is-active { color: var(--text); background: var(--control-bg); box-shadow: 0 2px 8px rgb(53 69 111 / 6%), inset 0 1px 0 var(--glass-edge); }
 .header-actions { display: flex; align-items: center; gap: 4px; padding-left: 15px; border-left: 1px solid var(--line); }

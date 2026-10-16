@@ -13,6 +13,7 @@ function themeConfig($form)
         text('heroPanelOneValue', '保持好奇', '首页信息卡 1 内容', '首页 Hero 右侧第一张卡片内容。'),
         text('weatherLocation', 'Shanghai', '天气地点', '首页天气卡使用的地点，建议填写城市英文名，如 Shanghai、Beijing、Tokyo。'),
         radio('colorMode', ['auto' => '跟随系统', 'light' => '浅色', 'dark' => '深色'], 'auto', '默认颜色模式', '仍可在前台手动切换。'),
+        radio('pageTransitions', ['enabled' => '开启', 'disabled' => '关闭'], 'enabled', '页面切换动效', '让页面柔和切换，导航选中标记平滑移动；尊重系统的减少动态效果设置。'),
         radio('interfaceFont', ['system' => '系统字体', 'source-han-serif' => '思源宋体'], 'system', '界面字体', '用于导航、首页标题、文章标题、卡片和按钮；文章正文与代码字体保持原样。'),
         radio('homeLatinFont', ['interface' => '跟随界面字体', 'playfair-display' => 'Playfair Display'], 'interface', '西文字体', '选择 Playfair Display 时，全站站名使用斜体，首页和缩略名为 about 的关于页使用相同西文字体；中文沿用界面字体，文章正文保留原有字体。'),
         text('favicon', '', '浏览器图标 URL', '用于浏览器标签页和收藏夹图标，支持 png、ico、svg。'),

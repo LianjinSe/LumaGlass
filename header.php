@@ -2,6 +2,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $options = \Helper::options();
 $colorMode = ag_option('colorMode', 'auto');
+$pageTransitions = ag_option('pageTransitions', 'enabled') === 'enabled';
 $interfaceFont = lg_interface_font();
 $isAboutPage = $this->is('page', 'about');
 $usePlayfair = ag_option('homeLatinFont', 'interface') === 'playfair-display';
@@ -12,6 +13,7 @@ $pages = ag_get_published_pages();
 $lightBg = trim((string) ag_option('backgroundLight', ''));
 $darkBg = trim((string) ag_option('backgroundDark', ''));
 $hasMath = ag_archive_has_math($this);
+$navIndex = 0;
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN" data-theme-mode="<?php echo htmlspecialchars($colorMode); ?>" data-interface-font="<?php echo $interfaceFont; ?>"<?php if ($useHomePlayfair): ?> data-home-latin-font="playfair-display"<?php endif; ?> data-glass="<?php echo ag_option('glassStrength', 'clear') === 'frosted' ? 'frosted' : 'clear'; ?>">
@@ -43,6 +45,10 @@ $hasMath = ag_archive_has_math($this);
   <?php endforeach; ?>
   <?php if ($interfaceFont === 'source-han-serif'): ?><link rel="stylesheet" href="<?php echo ag_asset('assets/fonts/source-han-serif/font.css'); ?>"><?php endif; ?>
   <?php if ($usePlayfair): ?><link rel="stylesheet" href="<?php echo ag_asset('assets/fonts/playfair-display/font.css'); ?>"><?php endif; ?>
+  <?php if ($pageTransitions): ?>
+    <link rel="stylesheet" href="<?php echo ag_asset('assets/css/transitions.css'); ?>">
+    <script src="<?php echo ag_asset('assets/js/transitions.js'); ?>"></script>
+  <?php endif; ?>
   <style>
     :root {
       --brand-light: <?php echo preg_match('/^#[0-9a-f]{3,8}$/i', (string) ag_option('accentLight', '#0071e3')) ? ag_option('accentLight', '#0071e3') : '#0071e3'; ?>;
@@ -67,12 +73,12 @@ $hasMath = ag_archive_has_math($this);
         <span class="brand-text"><strong><?php echo htmlspecialchars($options->title); ?></strong><small><?php echo htmlspecialchars(ag_option('brandTagline', $options->description)); ?></small></span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="主导航">
-        <a class="nav-link<?php if ($this->is('index')): ?> is-active<?php endif; ?>" href="<?php $options->siteUrl(); ?>"<?php if ($this->is('index')): ?> aria-current="page"<?php endif; ?>>首页</a>
+        <a class="nav-link<?php if ($this->is('index')): ?> is-active<?php endif; ?>" href="<?php $options->siteUrl(); ?>"<?php if ($this->is('index')): ?> aria-current="page"<?php endif; ?>><span class="nav-pill" aria-hidden="true"></span><span class="nav-label" style="--nav-view-name: lg-nav-label-<?php echo $navIndex++; ?>;">首页</span></a>
         <?php $renderedNav = []; foreach ($pages as $page): $renderedNav[] = ag_normalize_url_key($page['permalink']); $active = $this->is('page', $page['slug']); ?>
-          <a class="nav-link<?php if ($active): ?> is-active<?php endif; ?>" href="<?php echo htmlspecialchars($page['permalink']); ?>"<?php if ($active): ?> aria-current="page"<?php endif; ?>><?php echo htmlspecialchars($page['title']); ?></a>
+          <a class="nav-link<?php if ($active): ?> is-active<?php endif; ?>" href="<?php echo htmlspecialchars($page['permalink']); ?>"<?php if ($active): ?> aria-current="page"<?php endif; ?>><span class="nav-pill" aria-hidden="true"></span><span class="nav-label" style="--nav-view-name: lg-nav-label-<?php echo $navIndex++; ?>;"><?php echo htmlspecialchars($page['title']); ?></span></a>
         <?php endforeach; ?>
         <?php foreach (ag_get_nav_links() as $item): $key = ag_normalize_url_key($item['url']); if (in_array($key, $renderedNav, true)) continue; $renderedNav[] = $key; $active = ag_is_current_nav_link($this, $item['url']); ?>
-          <a class="nav-link<?php if ($active): ?> is-active<?php endif; ?>" href="<?php echo htmlspecialchars($item['url']); ?>"<?php if ($active): ?> aria-current="page"<?php endif; ?><?php if (!empty($item['newtab'])): ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>><?php echo htmlspecialchars($item['name']); ?></a>
+          <a class="nav-link<?php if ($active): ?> is-active<?php endif; ?>" href="<?php echo htmlspecialchars($item['url']); ?>"<?php if ($active): ?> aria-current="page"<?php endif; ?><?php if (!empty($item['newtab'])): ?> target="_blank" rel="noopener noreferrer"<?php endif; ?>><span class="nav-pill" aria-hidden="true"></span><span class="nav-label" style="--nav-view-name: lg-nav-label-<?php echo $navIndex++; ?>;"><?php echo htmlspecialchars($item['name']); ?></span></a>
         <?php endforeach; ?>
       </nav>
       <div class="header-actions">

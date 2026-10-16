@@ -1,0 +1,51 @@
+/* Each destination still loads as a complete Typecho document. */
+@supports (view-transition-name: lg-content) {
+  .nav-link { position: relative; isolation: isolate; }
+  .nav-link.is-active { background: transparent; box-shadow: none; }
+  .nav-link.is-active > .nav-pill {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--control-bg);
+    box-shadow: 0 2px 8px rgb(53 69 111 / 6%), inset 0 1px 0 var(--glass-edge);
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @view-transition { navigation: auto; }
+
+    :root { view-transition-name: none; }
+    /* Capture text, not its links: the live anchors remain hit-testable. */
+    .nav-label { view-transition-name: var(--nav-view-name); }
+    .nav-link.is-active > .nav-pill { view-transition-name: lg-nav-pill; }
+    #main-content { view-transition-name: lg-content; }
+    .site-footer-wrap { view-transition-name: lg-footer; }
+
+    /* Keep the live page clickable when a visitor changes direction. */
+    ::view-transition { pointer-events: none; }
+    ::view-transition-group(*) { z-index: 5; animation-duration: 250ms; animation-timing-function: var(--ease-in-out); }
+    ::view-transition-group(lg-footer) { z-index: 1; animation: none; clip-path: inset(var(--vt-footer-clip, 0px) 0 0); }
+    ::view-transition-group(lg-content) { z-index: 2; animation: none; clip-path: inset(var(--vt-content-clip, 0px) 0 0); }
+    ::view-transition-group(lg-nav-pill) { z-index: 4; }
+
+    /* The live chrome stays still; labels sit above the traveling pill. */
+    ::view-transition-old(*) { animation: none; opacity: 0; }
+    ::view-transition-new(*) { animation: none; }
+
+    /* Preserve each document's natural height instead of stretching text. */
+    ::view-transition-old(lg-content),
+    ::view-transition-new(lg-content),
+    ::view-transition-old(lg-footer),
+    ::view-transition-new(lg-footer) { height: auto; object-fit: contain; object-position: top left; mix-blend-mode: normal; }
+    ::view-transition-old(lg-content),
+    ::view-transition-old(lg-footer) { opacity: 1; animation: lg-fade-out 125ms var(--ease) both; }
+    ::view-transition-new(lg-content) { animation: lg-content-in 200ms var(--ease) 40ms both; }
+    ::view-transition-new(lg-footer) { animation: lg-fade-in 200ms var(--ease) 40ms both; }
+  }
+}
+
+@keyframes lg-fade-out { to { opacity: 0; } }
+@keyframes lg-fade-in { from { opacity: 0; } }
+@keyframes lg-content-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
