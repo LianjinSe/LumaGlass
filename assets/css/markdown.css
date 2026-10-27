@@ -2,7 +2,7 @@
 .entry-content > * { max-width: 100%; }
 .entry-content > :first-child { margin-top: 0; }
 .entry-content > :last-child { margin-bottom: 0; }
-.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 { line-height: 1.4; letter-spacing: -.025em; margin: 1.9em 0 .75em; font-weight: 650; scroll-margin-top: 120px; }
+.entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6 { line-height: 1.4; letter-spacing: -.025em; margin: 1.9em 0 .75em; font-weight: 650; scroll-margin-top: 12px; }
 .entry-content h1 { font-size: 1.95rem; }
 .entry-content h2 { font-size: 1.55rem; }
 .entry-content h3 { font-size: 1.25rem; }

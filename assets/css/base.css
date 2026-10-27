@@ -253,5 +253,5 @@ html[data-theme-mode="dark"] .theme-icon-sun { display: inline-flex; }
   html { scroll-behavior: auto; }
   #four-seasons-canvas { display: none !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
-  .post-card-link:hover .post-visual img, .icon-btn:active, .btn:active, .chip:active, .nav-link:active { transform: none; }
+  .post-card-link:hover .post-visual img, .icon-btn:active, .btn:active, .chip:active, .nav-link:active, .toc-fab:active { transform: none; }
 }
